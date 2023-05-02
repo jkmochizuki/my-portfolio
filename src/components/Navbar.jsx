@@ -2,7 +2,7 @@ import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 import React from "react";
 
 export default function Navbar() {
-  const navItems = ["Home", "About", "Projects", "Contact"];
+  const navItems = ["About", "Projects", "Contact"];
 
   return (
     <AppBar component="nav">
