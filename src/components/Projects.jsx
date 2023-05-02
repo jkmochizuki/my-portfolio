@@ -6,6 +6,7 @@ import {
   CardHeader,
   Box,
   Link,
+  ThemeProvider,
 } from "@mui/material";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,8 +16,16 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { projects } from "../constants";
 import "../styles/project.css";
+import { theme } from "../theme/theme";
+import { TypeAnimation } from "react-type-animation";
+import "../App.css";
+import { useInView } from "react-intersection-observer";
 
 export default function Projects() {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+  });
+
   const ProjectSlides = () => {
     return (
       <Swiper
@@ -25,6 +34,7 @@ export default function Projects() {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
+        className={`container ${inView ? "slide-in" : ""}`}
       >
         {projects.map((p) => (
           <SwiperSlide>
@@ -61,15 +71,24 @@ export default function Projects() {
   };
 
   return (
-    <Grid container sx={{ height: "100vh" }}>
-      <Grid xs={12} container p={5} marginBottom={5} sx={{ height: "95vh" }}>
-        <Grid item xs={12}>
-          <Typography variant="h4">Projects</Typography>
+    <Grid
+      container
+      sx={{ height: "100vh" }}
+      className={inView ? "section" : "opacity-0"}
+      ref={ref}
+    >
+      <ThemeProvider theme={theme}>
+        <Grid xs={12} container p={5} marginBottom={5} sx={{ height: "95vh" }}>
+          <Grid item xs={12}>
+            <Typography variant="h4">
+              <TypeAnimation sequence={["Projects", 800]} cursor={false} />
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <ProjectSlides />
+          </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <ProjectSlides />
-        </Grid>
-      </Grid>
+      </ThemeProvider>
     </Grid>
   );
 }

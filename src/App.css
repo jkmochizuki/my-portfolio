@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.section {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.container.slide-in {
+  animation: slide-in 1s;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.visible .container {
+  animation: none;
+}
