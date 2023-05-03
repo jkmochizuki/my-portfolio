@@ -36,3 +36,11 @@
   bottom: -100%;
   transition: height 0.5s, bottom 0.5s;
 }
+
+.swiper-button-prev, .swiper-button-next {
+  color: #2af0ea; 
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #2af0ea; 
+}
