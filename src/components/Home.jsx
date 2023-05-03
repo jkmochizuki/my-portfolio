@@ -22,10 +22,15 @@ export default function Home() {
             Juliana Mochizuki.
           </Typography>
           <Typography variant="h3" color="white">
-            I am a Full Stack Web Developer
+            I am a Full Stack Web Developer.
           </Typography>
           <br />
-          <Typography xs={3} variant="body1" sx={{ textAlign: "left" }} color="white">
+          <Typography
+            xs={3}
+            variant="body1"
+            sx={{ textAlign: "left" }}
+            color="white"
+          >
             Web Developer based in Metro Vancouver with a degree in Chemical
             Engineering and background in Accounting.
           </Typography>
@@ -34,15 +39,13 @@ export default function Home() {
             item
             container
             xs={1.2}
-            display="flex"
-            justifyContent="space-between"
-            color="white"
+            mt={3}
           >
-            <Button>Contact me</Button>
-
+            <Button variant="outlined" borderColor="primary.main">
+              Contact me
+            </Button>
           </Grid>
         </Grid>
-      
       </Grid>
     </ThemeProvider>
   );
