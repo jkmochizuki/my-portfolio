@@ -23,7 +23,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function Projects() {
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
   const ProjectSlides = () => {

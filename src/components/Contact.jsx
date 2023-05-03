@@ -20,7 +20,7 @@ export default function Contact() {
   });
 
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
   const handleClick = (e) => {

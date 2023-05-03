@@ -7,7 +7,7 @@ import "../App.css";
 
 export default function About() {
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
   return (

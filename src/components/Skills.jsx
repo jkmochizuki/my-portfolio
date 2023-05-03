@@ -8,7 +8,7 @@ import "../App.css";
 
 export default function Skills() {
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
   return (
