@@ -65,79 +65,97 @@ export default function Contact() {
       className={inView ? "section" : "opacity-0"}
       ref={ref}
     >
-      <ThemeProvider theme={theme}>
-        <Grid
-          xs={7}
-          container
-          component="form"
-          marginLeft={5}
-          p={5}
-          className={`container ${inView ? "slide-in" : ""}`}
-        >
-          <Grid item>
-            <Typography variant="h4">
-              <TypeAnimation sequence={["Get in touch", 800]} cursor={false} />
-            </Typography>
+      {inView ? (
+        <ThemeProvider theme={theme}>
+          <Grid
+            xs={7}
+            container
+            component="form"
+            marginLeft={5}
+            p={5}
+            className={`container ${inView ? "slide-in" : ""}`}
+          >
+            <Grid item>
+              <Typography variant="h4">
+                <TypeAnimation
+                  sequence={["", 2000, "Get in touch", 2000]}
+                  cursor={false}
+                />
+              </Typography>
+            </Grid>
+            <Grid item xs={12} container spacing={4}>
+              <Grid item xs={6}>
+                <TextField
+                  label="Name"
+                  variant="standard"
+                  fullWidth
+                  value={form.name}
+                  onChange={(event) =>
+                    setForm({ ...form, name: event.target.value })
+                  }
+                ></TextField>
+              </Grid>
+              <Grid item xs={6}>
+                <TextField
+                  label="Email"
+                  variant="standard"
+                  fullWidth
+                  value={form.email}
+                  onChange={(event) =>
+                    setForm({ ...form, email: event.target.value })
+                  }
+                ></TextField>
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Message"
+                  variant="standard"
+                  fullWidth
+                  value={form.message}
+                  onChange={(event) =>
+                    setForm({ ...form, message: event.target.value })
+                  }
+                ></TextField>
+              </Grid>
+
+              <Grid item>
+                <Button variant="contained" onClick={handleClick}>
+                  Send
+                </Button>
+              </Grid>
+            </Grid>
           </Grid>
-          <Grid item xs={12} container spacing={4}>
-            <Grid item xs={6}>
-              <TextField
-                label="Name"
-                variant="standard"
-                fullWidth
-                value={form.name}
-                onChange={(event) =>
-                  setForm({ ...form, name: event.target.value })
-                }
-              ></TextField>
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                label="Email"
-                variant="standard"
-                fullWidth
-                value={form.email}
-                onChange={(event) =>
-                  setForm({ ...form, email: event.target.value })
-                }
-              ></TextField>
-            </Grid>
+          <Grid
+            xs={4}
+            container
+            marginRight={5}
+            marginLeft={5}
+            padding={5}
+            className={`container ${inView ? "slide-in" : ""}`}
+          >
             <Grid item xs={12}>
-              <TextField
-                label="Message"
-                variant="standard"
-                fullWidth
-                value={form.message}
-                onChange={(event) =>
-                  setForm({ ...form, message: event.target.value })
-                }
-              ></TextField>
+              <Typography variant="h4">
+                <TypeAnimation
+                  sequence={["", 2000, "Follow", 2500]}
+                  cursor={false}
+                />
+              </Typography>
+            </Grid>
+            <Grid container alignContent="flex-start">
+              <Grid item xs={12} justifyContent="center" container>
+                <LinkedInIcon fontSize="large" />
+                <GitHubIcon fontSize="large" />
+              </Grid>
+              <Grid item xs={12}>
+                <Typography variant="h5">Juliana Mochizuki</Typography>
+                <Typography variant="h6">Full-Stack Web Developer</Typography>
+                <Typography variant="h5">Email</Typography>
+                <Typography variant="h6">jkmochizuki@gmail.com</Typography>
+              </Grid>
             </Grid>
           </Grid>
-          <Grid item>
-            <Button variant="contained" onClick={handleClick}>
-              Send
-            </Button>
-          </Grid>
-        </Grid>
-        <Grid xs={4} container marginRight={5} marginLeft={5} padding={5}>
-          <Grid item xs={12}>
-            <Typography variant="h4">
-              <TypeAnimation sequence={["Follow", 800]} cursor={false} />
-            </Typography>
-          </Grid>
-          <Grid item xs={12} justifyContent="center" container>
-            <LinkedInIcon fontSize="large" />
-            <GitHubIcon fontSize="large" />
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="h5">Juliana Mochizuki</Typography>
-            <Typography variant="h6">Full-Stack Web Developer</Typography>
-            <Typography variant="h5">Email</Typography>
-            <Typography variant="h6">jkmochizuki@gmail.com</Typography>
-          </Grid>
-        </Grid>
-      </ThemeProvider>
+        </ThemeProvider>
+      ) : null}
     </Grid>
   );
 }

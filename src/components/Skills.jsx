@@ -14,7 +14,11 @@ export default function Skills() {
   return (
     <Grid
       container
-      sx={{ height: "100vh" }}
+      sx={{
+        height: "100vh",
+        display: "flex",
+        alignContent: "center",
+      }}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
     >
@@ -28,23 +32,21 @@ export default function Skills() {
             justifyContent="center"
             marginBottom={5}
             sx={{ height: "60vh" }}
+            className={`container ${inView ? "slide-in" : ""}`}
           >
             <Grid item xs={12}>
-              <Typography variant="h4">
-                <TypeAnimation sequence={["Skills", 800]} cursor={false} />
+              <Typography variant="h4" color="primary.main">
+                <TypeAnimation
+                  sequence={["", 1500, "My Skills", 2000]}
+                  cursor={false}
+                />
               </Typography>
             </Grid>
-            <Grid
-              item
-              xs={8}
-              container
-              justifyContent="center"
-              className={`container ${inView ? "slide-in" : ""}`}
-            >
+            <Grid item xs={8} container justifyContent="center">
               {skills.map((s) => (
                 <Grid item xs={2} key={s.name}>
                   <Icon className={s.class} fontSize="large" />
-                  <Typography>{s.name}</Typography>
+                  <Typography color="white">{s.name}</Typography>
                 </Grid>
               ))}
             </Grid>

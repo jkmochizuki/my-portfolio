@@ -34,7 +34,7 @@ export default function Projects() {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        className={`container ${inView ? "slide-in" : ""}`}
+        
       >
         {projects.map((p) => (
           <SwiperSlide>
@@ -73,22 +73,33 @@ export default function Projects() {
   return (
     <Grid
       container
-      sx={{ height: "100vh" }}
+      sx={{ height: "100vh", display: "flex", alignContent: "center" }}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
     >
-      <ThemeProvider theme={theme}>
-        <Grid xs={12} container p={5} marginBottom={5} sx={{ height: "95vh" }}>
-          <Grid item xs={12}>
-            <Typography variant="h4">
-              <TypeAnimation sequence={["Projects", 800]} cursor={false} />
-            </Typography>
+      {inView ? (
+        <ThemeProvider theme={theme}>
+          <Grid
+            xs={12}
+            container
+            p={5}
+            display="flex"
+            justifyContent="center"
+            marginBottom={5}
+            sx={{ height: "80vh" }}
+            className={`container ${inView ? "slide-in" : ""}`}
+          >
+            <Grid item xs={12}>
+              <Typography variant="h4" color="primary.main">
+                <TypeAnimation sequence={["", 2000, "Projects", 2000]} cursor={false} />
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <ProjectSlides />
+            </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <ProjectSlides />
-          </Grid>
-        </Grid>
-      </ThemeProvider>
+        </ThemeProvider>
+      ) : null}
     </Grid>
   );
 }
