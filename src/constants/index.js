@@ -1,3 +1,5 @@
+export const navItems = ["About", "My Skills", "Projects", "Contact"];
+
 export const skills = [
   { name: "JavaScript", class: "devicon-javascript-plain colored" },
   { name: "Ruby", class: "devicon-ruby-plain colored" },
