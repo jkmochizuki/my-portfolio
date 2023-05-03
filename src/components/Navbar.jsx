@@ -1,6 +1,7 @@
 import {
   AppBar,
   Box,
+  Button,
   Drawer,
   IconButton,
   List,
@@ -24,7 +25,7 @@ export default function Navbar() {
     <ThemeProvider theme={theme}>
       <AppBar
         sx={{
-          height: "10vh",
+          height: "12vh",
           display: "flex",
           justifyContent: "center",
           alignItems: "flex-end",
@@ -46,10 +47,10 @@ export default function Navbar() {
           PaperProps={{
             sx: {
               elevation: 8,
-              height: "500px",
-              width: "500px",
+              height: "600px",
+              width: "600px",
               borderBottomLeftRadius: "100%",
-              marginTop: -11,
+              marginTop: -9,
             },
           }}
         >
@@ -67,12 +68,17 @@ export default function Navbar() {
           >
             <IconButton
               onClick={toggleDrawer}
-              sx={{ alignSelf: "flex-end", marginTop: -1, marginRight: 6, color: "white"}}
+              sx={{
+                alignSelf: "flex-end",
+                marginTop: -1,
+                marginRight: 6,
+                color: "white",
+              }}
             >
               <CloseIcon fontSize="large" />
             </IconButton>
             <List sx={{ paddingLeft: 10 }}>
-            <ListItem>
+              <ListItem>
                 <ListItemText primary="Home" />
               </ListItem>
               <ListItem>
@@ -86,6 +92,14 @@ export default function Navbar() {
               </ListItem>
               <ListItem>
                 <ListItemText primary="Contact" />
+              </ListItem>
+              <ListItem>
+                <Button
+                  variant="outlined"
+                  sx={{ color: "white", borderColor: "white" }}
+                >
+                  Resume
+                </Button>
               </ListItem>
             </List>
           </Box>
