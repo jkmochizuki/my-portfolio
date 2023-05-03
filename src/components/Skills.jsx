@@ -14,6 +14,7 @@ export default function Skills() {
   return (
     <Grid
       container
+      p={20}
       sx={{
         height: "100vh",
         display: "flex",
@@ -27,7 +28,6 @@ export default function Skills() {
           <Grid
             xs={12}
             container
-            p={5}
             display="flex"
             justifyContent="center"
             marginBottom={5}
@@ -35,9 +35,9 @@ export default function Skills() {
             className={`container ${inView ? "slide-in" : ""}`}
           >
             <Grid item xs={12}>
-              <Typography variant="h4" color="primary.main">
+              <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 1500, "My Skills", 2000]}
+                  sequence={["", 1500, "Skills", 2000]}
                   cursor={false}
                 />
               </Typography>

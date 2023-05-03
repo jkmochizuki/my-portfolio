@@ -34,7 +34,6 @@ export default function Projects() {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        
       >
         {projects.map((p) => (
           <SwiperSlide>
@@ -73,6 +72,7 @@ export default function Projects() {
   return (
     <Grid
       container
+      p={20}
       sx={{ height: "100vh", display: "flex", alignContent: "center" }}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
@@ -90,11 +90,14 @@ export default function Projects() {
             className={`container ${inView ? "slide-in" : ""}`}
           >
             <Grid item xs={12}>
-              <Typography variant="h4" color="primary.main">
-                <TypeAnimation sequence={["", 2000, "Projects", 2000]} cursor={false} />
+              <Typography variant="h4">
+                <TypeAnimation
+                  sequence={["", 2000, "Projects", 2000]}
+                  cursor={false}
+                />
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} color="primary.main">
               <ProjectSlides />
             </Grid>
           </Grid>

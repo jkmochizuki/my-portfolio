@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Icon, ThemeProvider, Typography } from "@mui/material";
+import { Box, Grid, ThemeProvider, Typography } from "@mui/material";
 import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
@@ -13,6 +13,7 @@ export default function About() {
   return (
     <Grid
       container
+      p={20}
       sx={{
         height: "100vh",
         display: "flex",
@@ -34,16 +35,14 @@ export default function About() {
             className={`container ${inView ? "slide-in" : ""}`}
           >
             <Grid item xs={12}>
-              <Typography variant="h4" color="primary.main">
-                <TypeAnimation sequence={["", 2000, "About Me", 2000]} cursor={false} />
+              <Typography variant="h4">
+                <TypeAnimation
+                  sequence={["", 2000, "About Me", 2000]}
+                  cursor={false}
+                />
               </Typography>
             </Grid>
-            <Grid
-              container
-              xs={12}
-              sx={{ height: "80%" }}
-              
-            >
+            <Grid container xs={12} sx={{ height: "80%" }}>
               <Grid
                 item
                 xs={7}
@@ -53,22 +52,25 @@ export default function About() {
                 justifyContent="center"
                 alignItems="flex-start"
               >
-                <Typography variant="body1" sx={{ textAlign: "left" }} color="white">
-                  Hello! My name is Juliana. As a web developer, I am comfortable working on both the
-                  frontend and backend. I have a strong desire to continuously
-                  learn and explore new technologies, and I am always
-                  enthusiastic about embracing fresh challenges. I approach my
-                  work with great motivation and gratitude for every opportunity
-                  that comes my way. My goal is to push my limits and constantly
-                  improve my skills and abilities. <br />
+                <Typography
+                  variant="body1"
+                  sx={{ textAlign: "left" }}
+                >
+                  Hello! My name is Juliana. As a web developer, I am
+                  comfortable working on both the frontend and backend. I have a
+                  strong desire to continuously learn and explore new
+                  technologies, and I am always enthusiastic about embracing
+                  fresh challenges. I approach my work with great motivation and
+                  gratitude for every opportunity that comes my way.
+                  <Typography variant="h6" color="primary.main" fontWeight="bold">
+                    My goal is to push my limits and constantly improve my
+                    skills and abilities.
+                  </Typography>
                   <br />
                   Apart from coding, I enjoy traveling, experimenting with new
                   foods, photography, and exploring new hobbies. Thank you for
                   visiting my site, and I look forward to connecting with you
                   soon!
-                  <br />
-                  <br />
-                  All the best,
                 </Typography>
               </Grid>
               <Grid
@@ -85,7 +87,8 @@ export default function About() {
                   src={process.env.PUBLIC_URL + "/images/headshot-juliana.jpg"}
                   alt=""
                   sx={{
-                    border: "2px solid white",
+                    border: "2px solid",
+                    borderColor: "white",
                     borderRadius: "50%",
                     height: 350,
                     width: 350,

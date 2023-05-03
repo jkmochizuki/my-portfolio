@@ -67,13 +67,16 @@ export default function Navbar() {
           >
             <IconButton
               onClick={toggleDrawer}
-              sx={{ alignSelf: "flex-end", marginTop: -1, margin: 6, color: "white"}}
+              sx={{ alignSelf: "flex-end", marginTop: -1, marginRight: 6, color: "white"}}
             >
               <CloseIcon fontSize="large" />
             </IconButton>
             <List sx={{ paddingLeft: 10 }}>
+            <ListItem>
+                <ListItemText primary="Home" />
+              </ListItem>
               <ListItem>
-                <ListItemText primary="My Skills" />
+                <ListItemText primary="Skills" />
               </ListItem>
               <ListItem>
                 <ListItemText primary="Projects" />
