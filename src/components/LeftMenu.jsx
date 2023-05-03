@@ -9,7 +9,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import "../App.css";
 
-export default function Left() {
+export default function LeftMenu() {
   return (
     <Grid
       container
@@ -31,7 +31,7 @@ export default function Left() {
         <GitHubIcon fontSize="large" />
         <br />
         <EmailIcon fontSize="large" />
-        <br /><Divider orientation="vertical" color="white" sx={{ width: "0.5px", alignSelf: "center"}} />
+        <br /><Divider orientation="vertical" color="white" sx={{ width: "0.3px", alignSelf: "center"}} />
       </Box>
       
     </Grid>
