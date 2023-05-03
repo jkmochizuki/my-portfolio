@@ -15,7 +15,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { projects } from "../constants";
-import "../styles/project.css";
+import "./projects.css";
 import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
 import "../App.css";
@@ -38,13 +38,14 @@ export default function Projects() {
         {projects.map((p) => (
           <SwiperSlide>
             <Card
-              sx={{ maxWidth: 800, mx: "auto", border: 1, borderRadius: 5 }}
+              sx={{ maxWidth: 750, mx: "auto", border: 1, borderRadius: 5 }}
+              
             >
               <CardHeader title={p.name} />
               <Box className="card">
                 <CardMedia
                   component="img"
-                  height="450"
+                  maxHeight="450"
                   image={process.env.PUBLIC_URL + p.image}
                   className="cardMedia"
                 />
@@ -72,8 +73,8 @@ export default function Projects() {
   return (
     <Grid
       container
-      p={20}
-      sx={{ height: "100vh", display: "flex", alignContent: "center" }}
+      p={{ xs: 8, md: 20 }}
+      sx={{ maxHeight: "100vh", display: "flex", alignContent: "center" }}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
     >
@@ -82,10 +83,8 @@ export default function Projects() {
           <Grid
             xs={12}
             container
-            p={5}
             display="flex"
             justifyContent="center"
-            marginBottom={5}
             sx={{ height: "80vh" }}
             className={`container ${inView ? "slide-in" : ""}`}
           >

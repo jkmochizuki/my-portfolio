@@ -8,11 +8,14 @@ import {
   ListItem,
   ListItemText,
   ThemeProvider,
+  Typography,
+  styled,
 } from "@mui/material";
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { theme } from "../theme/theme";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -25,11 +28,11 @@ export default function Navbar() {
     <ThemeProvider theme={theme}>
       <AppBar
         sx={{
-          height: "12vh",
+          height: {xs: "12vh", md: "16vh"},
           display: "flex",
           justifyContent: "center",
           alignItems: "flex-end",
-          p: 5,
+          p: { xs: 3, md: 6 },
           backgroundColor: "transparent",
           boxShadow: "none",
         }}
@@ -46,11 +49,10 @@ export default function Navbar() {
           onClose={toggleDrawer}
           PaperProps={{
             sx: {
-              elevation: 8,
-              height: "600px",
-              width: "600px",
+              height: { xs: 300, md: 500 },
+              width: { xs: 300, md: 500 },
               borderBottomLeftRadius: "100%",
-              marginTop: -9,
+              mt: -4,
             },
           }}
         >
@@ -70,38 +72,44 @@ export default function Navbar() {
               onClick={toggleDrawer}
               sx={{
                 alignSelf: "flex-end",
-                marginTop: -1,
-                marginRight: 6,
+                marginTop: {xs: 1, md: -1},
+                marginRight: {xs: 3, md: 6},
                 color: "white",
               }}
             >
               <CloseIcon fontSize="large" />
             </IconButton>
-            <List sx={{ paddingLeft: 10 }}>
-              <ListItem>
-                <ListItemText primary="Home" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Skills" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Projects" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="About" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Contact" />
-              </ListItem>
-              <ListItem>
-                <Button
-                  variant="outlined"
-                  sx={{ color: "white", borderColor: "white" }}
-                >
-                  Resume
-                </Button>
-              </ListItem>
-            </List>
+            <Box
+              sx={{
+                pl: { xs: 13, md: 20 },
+              }}
+            >
+              <Typography variant="h5" mb={{ xs: 0.5, md: 2 }}>
+                Home
+              </Typography>
+              <Typography variant="h5" mb={{ xs: 0.5, md: 2 }}>
+                Skills
+              </Typography>
+              <Typography variant="h5" mb={{ xs: 0.5, md: 2 }}>
+                Project
+              </Typography>
+              <Typography variant="h5" mb={{ xs: 0.5, md: 2 }}>
+                About
+              </Typography>
+              <Typography variant="h5" mb={{ xs: 0.5, md: 2 }}>
+                Contact
+              </Typography>
+              <Button
+                variant="outlined"
+                sx={{
+                  color: "white",
+                  borderColor: "white",
+                  textTransform: "none",
+                }}
+              >
+                <Typography variant="h6">Resume</Typography>
+              </Button>
+            </Box>
           </Box>
         </Drawer>
       </AppBar>

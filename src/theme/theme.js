@@ -7,7 +7,7 @@ export const theme = createTheme({
     },
     secondary: {
       main: "#b8336a",
-      mainOpacity: "rgba(184, 51, 106, 0.9)"
+      mainOpacity: "rgba(184, 51, 106, 0.9)",
     },
     warning: {
       main: "#c8b900",
@@ -28,13 +28,41 @@ export const theme = createTheme({
 
   typography: {
     fontFamily: ["Montserrat", "sans-serif"].join(","),
+    h3: {
+      color: "#ffffff",
+      "@media (max-width:900px)": {
+        fontSize: "1.7rem",
+      },
+    },
     h4: {
-      fontWeight: 400,
-      color: "#2af0ea"
+      color: "#2af0ea",
+      "@media (max-width:900px)": {
+        fontSize: "1.5rem",
+      },
+    },
+    h5: {
+      color: "#ffffff",
+      "@media (max-width:900px)": {
+        fontSize: "1rem",
+      },
+    },
+    h6: {
+      color: "#ffffff",
+      "@media (max-width:900px)": {
+        fontSize: "0.7rem",
+      },
     },
     body1: {
-      fontSize: "1.2rem",
-      color: "#ffffff"
+      color: "#ffffff",
+      "@media (max-width:900px)": {
+        fontSize: "1rem",
+      },
+    },
+    body2: {
+      color: "#ffffff",
+      "@media (max-width:900px)": {
+        fontSize: "0.7rem",
+      },
     },
   },
 });

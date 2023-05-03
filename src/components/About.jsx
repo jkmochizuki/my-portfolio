@@ -13,9 +13,9 @@ export default function About() {
   return (
     <Grid
       container
-      p={20}
+      p={{ xs: 8, md: 20 }}
       sx={{
-        height: "100vh",
+        minHeight: "100vh",
         display: "flex",
         alignContent: "center",
       }}
@@ -27,11 +27,7 @@ export default function About() {
           <Grid
             xs={12}
             container
-            p={5}
-            display="flex"
-            justifyContent="center"
-            marginBottom={5}
-            sx={{ height: "60vh" }}
+            sx={{ minHeight: "60vh" }}
             className={`container ${inView ? "slide-in" : ""}`}
           >
             <Grid item xs={12}>
@@ -42,27 +38,31 @@ export default function About() {
                 />
               </Typography>
             </Grid>
-            <Grid container xs={12} sx={{ height: "80%" }}>
-              <Grid
-                item
-                xs={7}
-                p={5}
-                display="flex"
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="flex-start"
-              >
-                <Typography
-                  variant="body1"
-                  sx={{ textAlign: "left" }}
-                >
+            {/* text and image */}
+            <Grid
+              container
+              xs={12}
+              sx={{
+                minHeight: "80%",
+                display: "flex",
+                flexWrap: 'wrap',
+                justifyContent: "center",
+                alignContent: "center",
+              }}
+            >
+              <Grid item xs={12} md={7} pt={{ xs: 2, md: 5 }} alignSelf="flex-start">
+                <Typography variant="body1" sx={{ textAlign: "left" }}>
                   Hello! My name is Juliana. As a web developer, I am
                   comfortable working on both the frontend and backend. I have a
                   strong desire to continuously learn and explore new
                   technologies, and I am always enthusiastic about embracing
                   fresh challenges. I approach my work with great motivation and
                   gratitude for every opportunity that comes my way.
-                  <Typography variant="h6" color="primary.main" fontWeight="bold">
+                  <Typography
+                    variant="h6"
+                    color="primary.main"
+                    fontWeight="bold"
+                  >
                     My goal is to push my limits and constantly improve my
                     skills and abilities.
                   </Typography>
@@ -73,15 +73,7 @@ export default function About() {
                   soon!
                 </Typography>
               </Grid>
-              <Grid
-                item
-                xs={5}
-                p={5}
-                display="flex"
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-              >
+              <Grid item xs={12} md={5} mt={{ xs: 5, md: 0 }}  alignSelf="center">
                 <Box
                   component="img"
                   src={process.env.PUBLIC_URL + "/images/headshot-juliana.jpg"}
@@ -90,8 +82,8 @@ export default function About() {
                     border: "2px solid",
                     borderColor: "white",
                     borderRadius: "50%",
-                    height: 350,
-                    width: 350,
+                    height: { xs: 150, md: 350 },
+                    width: { xs: 150, md: 350 },
                   }}
                 />
               </Grid>

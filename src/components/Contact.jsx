@@ -11,6 +11,7 @@ import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
 import "../App.css";
+import { ControlPointSharp } from "@mui/icons-material";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -25,18 +26,18 @@ export default function Contact() {
 
   const handleClick = (e) => {
     e.preventDefault();
-
+    console.log(process.env.REACT_APP_EMAILJS_SERVICE)
     emailjs
       .send(
-        "service_ok1pns2",
-        "template_8dobv7a",
+        process.env.REACT_APP_EMAILJS_SERVICE,
+        process.env.REACT_APP_EMAILJS_TEMPLATE,
         {
           from_name: form.name,
           from_email: form.email,
           message: form.message,
           to_name: "Juliana",
         },
-        "zy4iNUTiZAtTGbQxf"
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -59,14 +60,18 @@ export default function Contact() {
   return (
     <Grid
       container
-      p={20}
+      p={{ xs: 8, md: 20 }}
       sx={{ height: "70vh" }}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
     >
       {inView ? (
         <ThemeProvider theme={theme}>
-          <Grid item xs={12} sx={{ display: "flex", alignSelf: "flex-start" }}>
+          <Grid
+            container
+            xs={12}
+            sx={{ display: "flex", alignSelf: "flex-start" }}
+          >
             <Typography variant="h4">
               <TypeAnimation
                 sequence={["", 2000, "Get in touch", 2000]}
@@ -79,7 +84,7 @@ export default function Contact() {
             container
             className={`container ${inView ? "slide-in" : ""}`}
           >
-            <Grid item xs={8} container>
+            <Grid item xs={12} md={8} container>
               <Grid item xs={12} container spacing={4}>
                 <Grid item xs={6}>
                   <TextField
@@ -137,7 +142,15 @@ export default function Contact() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid Grid item xs={4} alignSelf="center" mb={5} pl={20}>
+            <Grid
+              Grid
+              item
+              xs={12}
+              md={4}
+              alignSelf="center"
+              mb={5}
+              pl={{ xs: 3, md: 20 }}
+            >
               <Typography variant="body1">Juliana Mochizuki</Typography>
               <Typography variant="body1">Full-Stack Web Developer</Typography>
               <Typography variant="body1">Email</Typography>
