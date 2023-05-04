@@ -1,36 +1,35 @@
-.card {
+.card-box {
   position: relative;
   overflow: hidden;
 }
 
-.card .cardMedia {
+.card-box .cardMedia {
   transition: transform 0.8s;
 }
 
-.card:hover .cardMedia {
+.card-box:hover .cardMedia {
   transform: scale(1.2);
 }
 
-.card .overlay {
+.card-box  .overlay {
   height: 0;
   position: absolute;
   bottom: 0;
-  background-color: rgba(184, 51, 106, 0.9);
+  background-color: rgba(255, 192, 203, 0.97);
   left: 0;
   right: 0;
   z-index: 9999;
-  color: #eeeeee;
   padding: 20px;
   box-sizing: border-box;
   transition: height 0.5s, bottom 0.5s;
 }
 
-.card:hover .overlay {
+.card-box:hover .overlay {
   height: 100%;
   bottom: 0;
 }
 
-.card:not(:hover) .overlay {
+.card-box:not(:hover) .overlay {
   height: 0;
   bottom: -100%;
   transition: height 0.5s, bottom 0.5s;
@@ -41,5 +40,5 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #2af0ea; 
+  background-color: #2af0ea;
 }

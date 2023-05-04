@@ -6,8 +6,12 @@ export const theme = createTheme({
       main: "#2af0ea",
     },
     secondary: {
-      main: "#b8336a",
-      mainOpacity: "rgba(184, 51, 106, 0.9)",
+      // main: "#734B5E"
+      // main: "#993955"
+      // main: "#6A5B6E",
+      // main: "#FF7477",
+      // main: "#C97064",
+      main: "#FFC0CB"
     },
     warning: {
       main: "#c8b900",
@@ -16,10 +20,8 @@ export const theme = createTheme({
       main: "#39ff14",
     },
     text: {
-      primary: "#ffffff",
-      secondary: "#2f323d",
-      disabled: "#444a59",
-      hint: "#b7c0cc",
+      primary: "#E2E8F0",
+      secondary: "#A0AEC0",
     },
     background: {
       default: "#1c1e26",
@@ -28,38 +30,60 @@ export const theme = createTheme({
 
   typography: {
     fontFamily: ["Montserrat", "sans-serif"].join(","),
+    h2: {
+      color: "#E2E8F0",
+      "@media (max-width:900px)": {
+        fontSize: "1.7rem",
+      },
+    },
     h3: {
-      color: "#ffffff",
+      color: "#E2E8F0",
       "@media (max-width:900px)": {
         fontSize: "1.7rem",
       },
     },
     h4: {
       color: "#2af0ea",
+      fontWeight: "bold",
       "@media (max-width:900px)": {
-        fontSize: "1.5rem",
+        fontSize: "1.2rem",
       },
     },
     h5: {
-      color: "#ffffff",
+      color: "#E2E8F0",
       "@media (max-width:900px)": {
-        fontSize: "1rem",
+        fontSize: "0.8rem",
       },
     },
     h6: {
-      color: "#ffffff",
+      color: "#2af0ea",
+      fontWeight: "bold",
       "@media (max-width:900px)": {
         fontSize: "0.7rem",
       },
     },
+    subtitle1: {
+      color: "#1c1e26",
+      fontSize: "1.3rem",
+      "@media (max-width:900px)": {
+        fontSize: "0.7rem",
+      },
+    },
+    subtitle2: {
+      color: "#1c1e26",
+      fontSize: "1.2rem",
+      "@media (max-width:900px)": {
+        fontSize: "0.5rem",
+      },
+    },
     body1: {
-      color: "#ffffff",
+      color: "#A0AEC0",
       "@media (max-width:900px)": {
         fontSize: "1rem",
       },
     },
     body2: {
-      color: "#ffffff",
+      color: "#E2E8F0",
       "@media (max-width:900px)": {
         fontSize: "0.7rem",
       },

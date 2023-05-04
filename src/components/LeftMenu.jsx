@@ -3,6 +3,7 @@ import { Box, Divider, Grid } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
+import DescriptionIcon from "@mui/icons-material/Description";
 import "../App.css";
 
 export default function LeftMenu() {
@@ -10,9 +11,9 @@ export default function LeftMenu() {
     <Grid
       container
       position="fixed"
-      color="white"
+      color="text.secondary"
       sx={{
-        height: "50vh",
+        height: "40vh",
         bottom: 0,
         display: "flex",
         flexDirection: "column",
@@ -23,16 +24,39 @@ export default function LeftMenu() {
       mb={{ xs: -8, md: 0 }}
     >
       <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <LinkedInIcon sx={{ fontSize: { xs: "medium", md: "xx-large" } }} />
+        <LinkedInIcon
+          sx={{ fontSize: { xs: "medium", md: "x-large" }, cursor: "pointer" }}
+          onClick={() =>
+            window.open("https://www.linkedin.com/in/jkmochizuki/", "_blank")
+          }
+        />
         <br />
-        <GitHubIcon sx={{ fontSize: { xs: "medium", md: "xx-large" } }} />
+        <GitHubIcon
+          sx={{ fontSize: { xs: "medium", md: "x-large" }, cursor: "pointer" }}
+          onClick={() =>
+            window.open("https://github.com/jkmochizuki", "_blank")
+          }
+        />
         <br />
-        <EmailIcon sx={{ fontSize: { xs: "medium", md: "xx-large" } }} />
+        <EmailIcon
+          sx={{ fontSize: { xs: "medium", md: "x-large" }, cursor: "pointer" }}
+          onClick={() => window.open("mailto:jkmochizuki@gmail.com")}
+        />
+        <br />
+        <DescriptionIcon
+          sx={{ fontSize: { xs: "medium", md: "x-large" }, cursor: "pointer" }}
+          onClick={() =>
+            window.open(
+              "https://resume.creddle.io/resume/3bkcgktacjr",
+              "_blank"
+            )
+          }
+        />
         <br />
         <Divider
           orientation="vertical"
-          color="white"
-          sx={{ width: "0.3px", height: "100%", alignSelf: "center" }}
+          color="#A0AEC0"
+          sx={{ width: "0.2px", height: "25vh", alignSelf: "center" }}
         />
       </Box>
     </Grid>

@@ -30,7 +30,6 @@ export default function Projects() {
     return (
       <Swiper
         modules={[Navigation, Pagination, A11y]}
-        spaceBetween={50}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
@@ -38,29 +37,56 @@ export default function Projects() {
         {projects.map((p) => (
           <SwiperSlide>
             <Card
-              sx={{ maxWidth: 750, mx: "auto", border: 1, borderRadius: 5 }}
-              
+              sx={{
+                maxWidth: 600,
+                mx: "auto",
+                [theme.breakpoints.up("md")]: {
+                  boxShadow:
+                    "15px 15px 0px 0px #1c1e26, 15px 15px 0px 0.5px #2af0ea",
+                },
+                borderRadius: 5,
+                // border: "0.5px solid #2af0ea"
+              }}
             >
-              <CardHeader title={p.name} />
-              <Box className="card">
+              <CardHeader title={p.name} sx={{ bgcolor: "#232733" }} />
+              <Box className="card-box">
                 <CardMedia
                   component="img"
                   maxHeight="450"
                   image={process.env.PUBLIC_URL + p.image}
                   className="cardMedia"
                 />
-                <Box className="overlay">
-                  <Typography variant="h6" color="#eeeeee">
-                    <Link href="#" color="#eeeeee">
+                <Box
+                  className="overlay"
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="center"
+                >
+                  <Typography variant="subtitle1" fontWeight="bold">
+                    <Link
+                      color="inherit"
+                      underline="hover"
+                      sx={{ cursor: "pointer" }}
+                      onClick={() => window.open(p.live, "_blank")}
+                    >
                       Live
                     </Link>
-                    |
-                    <Link href="#" color="#eeeeee">
+                    {" | "}
+                    <Link
+                      color="inherit"
+                      underline="hover"
+                      sx={{ cursor: "pointer" }}
+                      onClick={() => window.open(p.repo, "_blank")}
+                    >
                       Repo
                     </Link>
                   </Typography>
-                  <Typography variant="h6">{p.about}</Typography>
-                  <Typography variant="h6">Tech Stack: {p.stack}</Typography>
+                  <br />
+                  <Typography variant="subtitle2">{p.about}</Typography>
+                  <br />
+                  <Typography variant="subtitle2">
+                    Tech Stack: {p.stack}
+                  </Typography>
                 </Box>
               </Box>
             </Card>
@@ -74,7 +100,7 @@ export default function Projects() {
     <Grid
       container
       p={{ xs: 8, md: 20 }}
-      sx={{ maxHeight: "100vh", display: "flex", alignContent: "center" }}
+      sx={{ maxHeight: { xs: "50vh", md: "100vh" } }}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
     >
@@ -83,9 +109,7 @@ export default function Projects() {
           <Grid
             xs={12}
             container
-            display="flex"
-            justifyContent="center"
-            sx={{ height: "80vh" }}
+            sx={{ minHeight: "80vh" }}
             className={`container ${inView ? "slide-in" : ""}`}
           >
             <Grid item xs={12}>
@@ -96,7 +120,18 @@ export default function Projects() {
                 />
               </Typography>
             </Grid>
-            <Grid item xs={12} color="primary.main">
+            <Grid
+              container
+              xs={12}
+              sx={{
+                [theme.breakpoints.down("md")]: {
+                  minHeight: "80%",
+                  display: "flex",
+                  alignContent: "space-between",
+                  mb: 5,
+                },
+              }}
+            >
               <ProjectSlides />
             </Grid>
           </Grid>

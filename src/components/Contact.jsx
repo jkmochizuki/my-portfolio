@@ -11,7 +11,6 @@ import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
 import "../App.css";
-import { ControlPointSharp } from "@mui/icons-material";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -151,9 +150,9 @@ export default function Contact() {
               mb={5}
               pl={{ xs: 3, md: 20 }}
             >
-              <Typography variant="body1">Juliana Mochizuki</Typography>
+              <Typography variant="body1" fontWeight="bold">Juliana Mochizuki</Typography>
               <Typography variant="body1">Full-Stack Web Developer</Typography>
-              <Typography variant="body1">Email</Typography>
+              <Typography variant="body1" fontWeight="bold">Email</Typography>
               <Typography variant="body1">jkmochizuki@gmail.com</Typography>
             </Grid>
           </Grid>

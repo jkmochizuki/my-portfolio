@@ -1,24 +1,21 @@
 import {
   AppBar,
   Box,
-  Button,
   Drawer,
   IconButton,
-  List,
-  ListItem,
-  ListItemText,
   ThemeProvider,
   Typography,
-  styled,
 } from "@mui/material";
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { theme } from "../theme/theme";
-import { Link, animateScroll as scroll } from "react-scroll";
+import * as Scroll from 'react-scroll';
+import { Link } from "react-scroll";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  let Link= Scroll.Link;
 
   const toggleDrawer = () => {
     setOpen((prev) => !prev);
@@ -28,7 +25,7 @@ export default function Navbar() {
     <ThemeProvider theme={theme}>
       <AppBar
         sx={{
-          height: {xs: "12vh", md: "16vh"},
+          height: { xs: "12vh", md: "16vh" },
           display: "flex",
           justifyContent: "center",
           alignItems: "flex-end",
@@ -38,10 +35,10 @@ export default function Navbar() {
         }}
       >
         <IconButton
-          sx={{ bgcolor: "secondary.main", color: "white" }}
+          sx={{ bgcolor: "secondary.main", color: "background.default" }}
           onClick={toggleDrawer}
         >
-          <MenuIcon fontSize="large" />
+          <MenuIcon sx={{ fontSize: { xs: "medium", md: "xx-large" } }} />
         </IconButton>
         <Drawer
           anchor="right"
@@ -49,8 +46,8 @@ export default function Navbar() {
           onClose={toggleDrawer}
           PaperProps={{
             sx: {
-              height: { xs: 300, md: 500 },
-              width: { xs: 300, md: 500 },
+              height: { xs: 270, md: 450 },
+              width: { xs: 270, md: 450 },
               borderBottomLeftRadius: "100%",
               mt: -4,
             },
@@ -60,8 +57,8 @@ export default function Navbar() {
             sx={{
               width: "100%",
               height: "100%",
-              backgroundColor: theme.palette.secondary.main,
-              color: "white",
+              backgroundColor: "secondary.main",
+              color: "background.default",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -72,43 +69,35 @@ export default function Navbar() {
               onClick={toggleDrawer}
               sx={{
                 alignSelf: "flex-end",
-                marginTop: {xs: 1, md: -1},
-                marginRight: {xs: 3, md: 6},
-                color: "white",
+                marginTop: { xs: 1, md: -1 },
+                marginRight: { xs: 3, md: 6 },
+                color: "background.default",
               }}
             >
-              <CloseIcon fontSize="large" />
+              <CloseIcon sx={{ fontSize: { xs: "medium", md: "xx-large" } }} />
             </IconButton>
             <Box
               sx={{
                 pl: { xs: 13, md: 20 },
               }}
             >
-              <Typography variant="h5" mb={{ xs: 0.5, md: 2 }}>
-                Home
-              </Typography>
-              <Typography variant="h5" mb={{ xs: 0.5, md: 2 }}>
+              <Link activeClass="active" to="#skills" spy={true} smooth={true}>
+                <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
+                  Home
+                </Typography>
+              </Link>
+              <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
                 Skills
               </Typography>
-              <Typography variant="h5" mb={{ xs: 0.5, md: 2 }}>
+              <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
                 Project
               </Typography>
-              <Typography variant="h5" mb={{ xs: 0.5, md: 2 }}>
+              <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
                 About
               </Typography>
-              <Typography variant="h5" mb={{ xs: 0.5, md: 2 }}>
+              <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
                 Contact
               </Typography>
-              <Button
-                variant="outlined"
-                sx={{
-                  color: "white",
-                  borderColor: "white",
-                  textTransform: "none",
-                }}
-              >
-                <Typography variant="h6">Resume</Typography>
-              </Button>
             </Box>
           </Box>
         </Drawer>

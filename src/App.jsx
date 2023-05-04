@@ -15,11 +15,11 @@ function App() {
       <Box className="App" bgcolor="background.default">
         <Navbar />
         <LeftMenu />
-        <Home />
-        <Skills />
-        <Projects />
-        <About />
-        <Contact />
+        <Home id="home" />
+        <Skills id="skills" />
+        <Projects id="projects" />
+        <About id="about" />
+        <Contact id="contact" />
       </Box>
     </ThemeProvider>
   );

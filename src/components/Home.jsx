@@ -1,4 +1,4 @@
-import { Typography, Grid, ThemeProvider, Button } from "@mui/material";
+import { Typography, Grid, ThemeProvider, Button, Stack } from "@mui/material";
 import React from "react";
 import { theme } from "../theme/theme";
 
@@ -19,27 +19,36 @@ export default function Home() {
           <Typography variant="body1" color="primary.main">
             Hey! My name is
           </Typography>
-          <Typography variant="h3" color="white">
+          <br/>
+          <Typography variant="h2" fontWeight="bold">
             Juliana Mochizuki.
           </Typography>
-          <Typography variant="h3" color="white">
-            I am a Full Stack Web Developer.
-          </Typography>
-          <br />
-          <Typography xs={3} variant="body1" color="white">
+          <Typography variant="h3">I am a Full Stack Web Developer.</Typography>
+          <br/><br/>
+          <Typography xs={3} variant="body1" width="55%">
             Web Developer based in Metro Vancouver with a degree in Chemical
             Engineering and background in Accounting.
           </Typography>
-          <br />
-          <Grid item container xs={1} md={1.2} mt={3}>
+          <br/><br/>
+
+          <Stack direction="row" spacing={2}>
             <Button
               variant="outlined"
               borderColor="primary.main"
-              sx={{ fontSize: { xs: 8, md: 11 } }}
+              sx={{ borderRadius: 2, fontSize: { xs: 10, md: 15 }, width: {xs: 100, md: 140}}}
+              onClick={() => window.open("https://example.com", "_blank")}
             >
               Contact me
             </Button>
-          </Grid>
+            <Button
+              variant="outlined"
+              borderColor="primary.main"
+              sx={{ borderRadius: 2, fontSize: { xs: 10, md: 15 }, width: {xs: 100, md: 140} }}
+              onClick={() => window.open("https://resume.creddle.io/resume/3bkcgktacjr", "_blank")}
+            >
+              Resume
+            </Button>
+          </Stack>
         </Grid>
       </Grid>
     </ThemeProvider>

@@ -27,6 +27,8 @@ export const projects = [
       "A coding-oriented flashcards app to help developers and students retain languages and frameworks concepts effectively.",
     stack:
       "React, Axios, Nodejs, Express.js , Prisma ORM, PostgreSQL, Auth0, OpenAPI, Material UI.",
+      live: "https://codi-app.netlify.app",
+      repo: "https://github.com/PavelKotlov/codi-client"
   },
   {
     name: "Scheduler",
@@ -34,11 +36,15 @@ export const projects = [
     about:
       "React scheduler application that allows users to book and cancel interviews.",
     stack: "React, Axios, Classnames, Normalize, Storybook.",
+    live: "",
+    repo: "https://github.com/jkmochizuki/scheduler"
   },
   {
     name: "Tweeter",
     image: "/images/tweeter-project.png",
     about: "Tweeter is a simple, single-page Twitter clone.",
     stack: "Express, jQuery, PostgreSQL, Node.",
+    live: "",
+    repo: "https://github.com/jkmochizuki/tweeter"
   },
 ];

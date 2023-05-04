@@ -16,8 +16,6 @@ export default function About() {
       p={{ xs: 8, md: 20 }}
       sx={{
         minHeight: "100vh",
-        display: "flex",
-        alignContent: "center",
       }}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
@@ -43,14 +41,20 @@ export default function About() {
               container
               xs={12}
               sx={{
-                minHeight: "80%",
+                minHeight: "90%",
                 display: "flex",
-                flexWrap: 'wrap',
+                flexWrap: "wrap",
                 justifyContent: "center",
                 alignContent: "center",
               }}
             >
-              <Grid item xs={12} md={7} pt={{ xs: 2, md: 5 }} alignSelf="flex-start">
+              <Grid
+                item
+                xs={12}
+                md={7}
+                pt={{ xs: 2, md: 5 }}
+                alignSelf="flex-start"
+              >
                 <Typography variant="body1" sx={{ textAlign: "left" }}>
                   Hello! My name is Juliana. As a web developer, I am
                   comfortable working on both the frontend and backend. I have a
@@ -58,11 +62,7 @@ export default function About() {
                   technologies, and I am always enthusiastic about embracing
                   fresh challenges. I approach my work with great motivation and
                   gratitude for every opportunity that comes my way.
-                  <Typography
-                    variant="h6"
-                    color="primary.main"
-                    fontWeight="bold"
-                  >
+                  <Typography variant="h6">
                     My goal is to push my limits and constantly improve my
                     skills and abilities.
                   </Typography>
@@ -73,17 +73,23 @@ export default function About() {
                   soon!
                 </Typography>
               </Grid>
-              <Grid item xs={12} md={5} mt={{ xs: 5, md: 0 }}  alignSelf="center">
+              <Grid
+                item
+                xs={12}
+                md={5}
+                mt={{ xs: 5, md: 0 }}
+                alignSelf="center"
+              >
                 <Box
                   component="img"
                   src={process.env.PUBLIC_URL + "/images/headshot-juliana.jpg"}
                   alt=""
                   sx={{
-                    border: "2px solid",
-                    borderColor: "white",
+                    border: "1px solid",
+                    borderColor: "primary.main",
                     borderRadius: "50%",
-                    height: { xs: 150, md: 350 },
-                    width: { xs: 150, md: 350 },
+                    height: { xs: 150, md: 300 },
+                    width: { xs: 150, md: 300 },
                   }}
                 />
               </Grid>

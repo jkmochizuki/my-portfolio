@@ -14,7 +14,7 @@ export default function Skills() {
   return (
     <Grid
       container
-      p={{ xs: 0, md: 20 }}
+      p={{ xs: 8, md: 20 }}
       sx={{
         minHeight: "100vh",
       }}
@@ -26,9 +26,7 @@ export default function Skills() {
           <Grid
             xs={12}
             container
-            display="flex"
-            justifyContent="center"
-            sx={{ maxHeight: "60vh" }}
+            sx={{ minHeight: "60vh" }}
             className={`container ${inView ? "slide-in" : ""}`}
           >
             <Grid item xs={12}>
@@ -39,14 +37,20 @@ export default function Skills() {
                 />
               </Typography>
             </Grid>
-            <Grid item xs={8} container justifyContent="center">
+            <Grid xs={12} container sx={{
+                minHeight: "80%",
+                display: "flex",
+                justifyContent: "center",
+                alignContent: "space-around",
+              }}>
               {skills.map((s) => (
-                <Grid item xs={5} md={2} key={s.name}>
+                <Grid item xs={4} md={2} key={s.name}>
                   <Icon
                     className={s.class}
-                    sx={{ fontSize: { xs: "large", md: "xxx-large" } }}
+
+                    sx={{ fontSize: { xs: "large", md: 70 } }}
                   />
-                  <Typography variant="body2" color="white">{s.name}</Typography>
+                  <Typography variant="body2">{s.name}</Typography>
                 </Grid>
               ))}
             </Grid>
