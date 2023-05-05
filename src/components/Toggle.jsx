@@ -6,8 +6,8 @@ import { HashLink } from "react-router-hash-link";
 
 export default function Toggle() {
   return (
-    <Box position="fixed" bottom={0} right={0} p={{ xs: 3, md: 10 }}>
-      <HashLink to="#home" smooth>
+    <Box position="fixed" bottom={0} right={0} p={{ xs: 5, md: 10 }}>
+      <HashLink to="#home" smooth style={{ textDecoration: "none" }}>
         <Tooltip title="Scroll to top">
           <ExpandCircleDownIcon
             className="circle-icon"
