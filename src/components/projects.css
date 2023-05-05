@@ -39,6 +39,6 @@
   color: #2af0ea; 
 }
 
-.swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active, .swiper-pagination-bullet {
   background-color: #2af0ea;
 }

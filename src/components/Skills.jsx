@@ -1,10 +1,11 @@
 import React from "react";
-import { Grid, Icon, ThemeProvider, Typography } from "@mui/material";
+import { Box, Grid, Icon, ThemeProvider, Typography } from "@mui/material";
 import { skills } from "../constants";
 import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
 import "../App.css";
+import { Image } from "@mui/icons-material";
 
 export default function Skills() {
   const { ref, inView } = useInView({
@@ -26,7 +27,7 @@ export default function Skills() {
           <Grid
             xs={12}
             container
-            sx={{ minHeight: "60vh" }}
+            sx={{ minHeight: "70vh" }}
             className={`container ${inView ? "slide-in" : ""}`}
           >
             <Grid item xs={12}>
@@ -37,19 +38,28 @@ export default function Skills() {
                 />
               </Typography>
             </Grid>
-            <Grid xs={12} container sx={{
-                minHeight: "80%",
+            <Grid
+              xs={12}
+              container
+              sx={{
+                minHeight: "60%",
                 display: "flex",
                 justifyContent: "center",
                 alignContent: "space-around",
-              }}>
+              }}
+            >
               {skills.map((s) => (
-                <Grid item xs={4} md={2} key={s.name}>
-                  <Icon
-                    className={s.class}
-
-                    sx={{ fontSize: { xs: "large", md: 70 } }}
-                  />
+                <Grid item xs={4} md={2.2} key={s.name}>
+                  {s.name === "SQL" ||
+                  s.name === "Express.js" ||
+                  s.name === "Prisma" ? (
+                    <Box component="img" sx={{ height: { xs: 35, md: 70 } }} src={s.src} alt={s.name} />
+                  ) : (
+                    <Icon
+                      className={s.class}
+                      sx={{ fontSize: { xs: 35, md: 70 } }}
+                    ></Icon>
+                  )}
                   <Typography variant="body2">{s.name}</Typography>
                 </Grid>
               ))}

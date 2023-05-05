@@ -45,7 +45,6 @@ export default function Projects() {
                     "15px 15px 0px 0px #1c1e26, 15px 15px 0px 0.5px #2af0ea",
                 },
                 borderRadius: 5,
-                // border: "0.5px solid #2af0ea"
               }}
             >
               <CardHeader title={p.name} sx={{ bgcolor: "#232733" }} />
@@ -63,15 +62,19 @@ export default function Projects() {
                   justifyContent="center"
                 >
                   <Typography variant="subtitle1" fontWeight="bold">
-                    <Link
-                      color="inherit"
-                      underline="hover"
-                      sx={{ cursor: "pointer" }}
-                      onClick={() => window.open(p.live, "_blank")}
-                    >
-                      Live
-                    </Link>
-                    {" | "}
+                    {p.name !== "Tweeter" && (
+                      <span>
+                        <Link
+                          color="inherit"
+                          underline="hover"
+                          sx={{ cursor: "pointer" }}
+                          onClick={() => window.open(p.live, "_blank")}
+                        >
+                          Live
+                        </Link>
+                        {" | "}
+                      </span>
+                    )}
                     <Link
                       color="inherit"
                       underline="hover"
