@@ -33,7 +33,13 @@ export default function Navbar() {
         }}
       >
         <IconButton
-          sx={{ bgcolor: "secondary.main", color: "background.default" }}
+          sx={{
+            bgcolor: "secondary.main",
+            color: "background.default",
+            "&:hover": {
+              bgcolor: "secondary.dark",
+            },
+          }}
           onClick={toggleDrawer}
         >
           <MenuIcon sx={{ fontSize: { xs: "medium", md: "xx-large" } }} />
@@ -81,28 +87,84 @@ export default function Navbar() {
                 pl: { xs: 13, md: 20 },
               }}
             >
-              <NavHashLink to="#home" smooth>
-                <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
+              <NavHashLink to="#home" smooth style={{ textDecoration: "none" }}>
+                <Typography
+                  variant="subtitle1"
+                  mb={{ xs: 0.5, md: 2 }}
+                  sx={{
+                    "&:hover": {
+                      color: "text.secondary",
+                    },
+                  }}
+                >
                   Home
                 </Typography>
               </NavHashLink>
-              <NavHashLink to="#skills" smooth>
-                <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
+              <NavHashLink
+                to="#skills"
+                smooth
+                style={{ textDecoration: "none" }}
+              >
+                <Typography
+                  variant="subtitle1"
+                  mb={{ xs: 0.5, md: 2 }}
+                  sx={{
+                    "&:hover": {
+                      color: "text.secondary",
+                    },
+                  }}
+                >
                   Skills
                 </Typography>
               </NavHashLink>
-              <NavHashLink to="#projects" smooth>
-                <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
+              <NavHashLink
+                to="#projects"
+                smooth
+                style={{ textDecoration: "none" }}
+              >
+                <Typography
+                  variant="subtitle1"
+                  mb={{ xs: 0.5, md: 2 }}
+                  sx={{
+                    "&:hover": {
+                      color: "text.secondary",
+                    },
+                  }}
+                >
                   Project
                 </Typography>
               </NavHashLink>
-              <NavHashLink to="#about" smooth>
-                <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
+              <NavHashLink
+                to="#about"
+                smooth
+                style={{ textDecoration: "none" }}
+              >
+                <Typography
+                  variant="subtitle1"
+                  mb={{ xs: 0.5, md: 2 }}
+                  sx={{
+                    "&:hover": {
+                      color: "text.secondary",
+                    },
+                  }}
+                >
                   About
                 </Typography>
               </NavHashLink>
-              <NavHashLink to="#contact" smooth>
-                <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
+              <NavHashLink
+                to="#contact"
+                smooth
+                style={{ textDecoration: "none" }}
+              >
+                <Typography
+                  variant="subtitle1"
+                  mb={{ xs: 0.5, md: 2 }}
+                  sx={{
+                    "&:hover": {
+                      color: "text.secondary",
+                    },
+                  }}
+                >
                   Contact
                 </Typography>
               </NavHashLink>
