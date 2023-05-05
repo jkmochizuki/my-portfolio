@@ -4,7 +4,7 @@ import { skills } from "../constants";
 import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
-import "../App.css";
+import { skillsStyles } from "../theme/styles";
 
 export default function Skills() {
   const { ref, inView } = useInView({
@@ -14,10 +14,7 @@ export default function Skills() {
   return (
     <Grid
       container
-      p={{ xs: 8, md: 15 }}
-      sx={{
-        minHeight: "100vh",
-      }}
+      sx={skillsStyles.root}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
       id="skills"
@@ -27,9 +24,10 @@ export default function Skills() {
           <Grid
             xs={12}
             container
-            sx={{ minHeight: "70vh" }}
+            sx={skillsStyles.container}
             className={`container ${inView ? "slide-in" : ""}`}
           >
+            {/* title */}
             <Grid item xs={12}>
               <Typography variant="h4">
                 <TypeAnimation
@@ -38,16 +36,9 @@ export default function Skills() {
                 />
               </Typography>
             </Grid>
-            <Grid
-              xs={12}
-              container
-              sx={{
-                minHeight: "50%",
-                display: "flex",
-                justifyContent: "center",
-                alignContent: "space-around",
-              }}
-            >
+
+            {/* skills */}
+            <Grid xs={12} container sx={{ justifyContent: "center" }}>
               {skills.map((s) => (
                 <Grid item xs={4} md={2.2} key={s.name}>
                   {s.name === "SQL" ||
@@ -55,15 +46,12 @@ export default function Skills() {
                   s.name === "Prisma" ? (
                     <Box
                       component="img"
-                      sx={{ height: { xs: 35, md: 60 } }}
+                      sx={skillsStyles.iconImage}
                       src={s.src}
                       alt={s.name}
                     />
                   ) : (
-                    <Icon
-                      className={s.class}
-                      sx={{ fontSize: { xs: 35, md: 60 } }}
-                    ></Icon>
+                    <Icon className={s.class} sx={skillsStyles.icon}></Icon>
                   )}
                   <Typography variant="body2">{s.name}</Typography>
                 </Grid>

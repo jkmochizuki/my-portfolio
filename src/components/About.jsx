@@ -3,7 +3,7 @@ import { Box, Grid, ThemeProvider, Typography } from "@mui/material";
 import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
-import "../App.css";
+import { aboutStyles } from "../theme/styles";
 
 export default function About() {
   const { ref, inView } = useInView({
@@ -13,10 +13,7 @@ export default function About() {
   return (
     <Grid
       container
-      p={{ xs: 8, md: 15 }}
-      sx={{
-        minHeight: "100vh",
-      }}
+      sx={aboutStyles.root}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
       id="about"
@@ -26,9 +23,10 @@ export default function About() {
           <Grid
             xs={12}
             container
-            sx={{ minHeight: "60vh" }}
+            sx={aboutStyles.container}
             className={`container ${inView ? "slide-in" : ""}`}
           >
+            {/* title */}
             <Grid item xs={12}>
               <Typography variant="h4">
                 <TypeAnimation
@@ -37,26 +35,12 @@ export default function About() {
                 />
               </Typography>
             </Grid>
+
             {/* text and image */}
-            <Grid
-              container
-              xs={12}
-              sx={{
-                minHeight: "90%",
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                alignContent: "center",
-              }}
-            >
-              <Grid
-                item
-                xs={12}
-                md={7}
-                pt={{ xs: 2, md: 5 }}
-                alignSelf="flex-start"
-              >
-                <Typography variant="body1" sx={{ textAlign: "left" }}>
+            <Grid container xs={12} mt={{ xs: 2, md: -10 }}>
+              {/* text */}
+              <Grid item xs={12} md={7} alignSelf="center">
+                <Typography variant="body1" sx={aboutStyles.body}>
                   Hello! My name is Juliana. As a web developer, I am
                   comfortable working on both the frontend and backend. I have a
                   strong desire to continuously learn and explore new
@@ -74,24 +58,13 @@ export default function About() {
                   soon!
                 </Typography>
               </Grid>
-              <Grid
-                item
-                xs={12}
-                md={5}
-                mt={{ xs: 5, md: 0 }}
-                alignSelf="center"
-              >
+              {/* image */}
+              <Grid item xs={12} md={5} sx={aboutStyles.imageContainer}>
                 <Box
                   component="img"
                   src={process.env.PUBLIC_URL + "/images/headshot-juliana.jpg"}
                   alt=""
-                  sx={{
-                    border: "1px solid",
-                    borderColor: "primary.main",
-                    borderRadius: "50%",
-                    height: { xs: 150, md: 300 },
-                    width: { xs: 150, md: 300 },
-                  }}
+                  sx={aboutStyles.image}
                 />
               </Grid>
             </Grid>

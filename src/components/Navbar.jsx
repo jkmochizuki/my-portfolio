@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Box,
@@ -6,71 +7,68 @@ import {
   ThemeProvider,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { theme } from "../theme/theme";
 import { NavHashLink } from "react-router-hash-link";
+import { menuOptions } from "../constants";
+import { navbarStyles } from "../theme/styles";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [isHome, setIsHome] = useState(true);
 
   const toggleDrawer = () => {
     setOpen((prev) => !prev);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 50) {
+        setIsHome(false);
+      } else {
+        setIsHome(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
-      <AppBar
-        sx={{
-          height: { xs: "12vh", md: "16vh" },
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-end",
-          p: { xs: 3, md: 6 },
-          backgroundColor: "transparent",
-          boxShadow: "none",
-        }}
-      >
-        <IconButton
-          sx={{
-            bgcolor: "secondary.main",
-            color: "background.default",
-            "&:hover": {
-              bgcolor: "secondary.dark",
-            },
-          }}
-          onClick={toggleDrawer}
-        >
-          <MenuIcon sx={{ fontSize: { xs: "medium", md: "xx-large" } }} />
-        </IconButton>
+      <AppBar sx={navbarStyles.root}>
+        {/* navbar */}
+        <Box sx={navbarStyles.navSection}>
+          {isHome ? (
+            <Box
+              component="img"
+              src={process.env.PUBLIC_URL + "/images/logo.png"}
+              alt=""
+              sx={navbarStyles.navItems}
+            />
+          ) : (
+            <Box sx={navbarStyles.navItems} />
+          )}
+          <IconButton sx={navbarStyles.iconButton} onClick={toggleDrawer}>
+            <MenuIcon sx={navbarStyles.menuIcon} />
+          </IconButton>
+        </Box>
+
+        {/* menu drawer */}
         <Drawer
           anchor="right"
           open={open}
           onClose={toggleDrawer}
           PaperProps={{
-            sx: {
-              height: { xs: 270, md: 450 },
-              width: { xs: 270, md: 450 },
-              borderBottomLeftRadius: "100%",
-              mt: -4,
-            },
+            sx: navbarStyles.drawerPaperProps,
           }}
           disableScrollLock={true}
           variant="persistent"
         >
-          <Box
-            sx={{
-              width: "100%",
-              height: "100%",
-              backgroundColor: "secondary.main",
-              color: "background.default",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <Box sx={navbarStyles.drawerContainer}>
+            {/* close button */}
             <IconButton
               onClick={toggleDrawer}
               sx={{
@@ -80,94 +78,18 @@ export default function Navbar() {
                 color: "background.default",
               }}
             >
-              <CloseIcon sx={{ fontSize: { xs: "medium", md: "xx-large" } }} />
+              <CloseIcon sx={navbarStyles.closeIcon} />
             </IconButton>
-            <Box
-              sx={{
-                pl: { xs: 13, md: 20 },
-              }}
-            >
-              <NavHashLink to="#home" smooth style={{ textDecoration: "none" }}>
-                <Typography
-                  variant="subtitle1"
-                  mb={{ xs: 0.5, md: 2 }}
-                  sx={{
-                    "&:hover": {
-                      color: "text.secondary",
-                    },
-                  }}
-                >
-                  Home
-                </Typography>
-              </NavHashLink>
-              <NavHashLink
-                to="#skills"
-                smooth
-                style={{ textDecoration: "none" }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  mb={{ xs: 0.5, md: 2 }}
-                  sx={{
-                    "&:hover": {
-                      color: "text.secondary",
-                    },
-                  }}
-                >
-                  Skills
-                </Typography>
-              </NavHashLink>
-              <NavHashLink
-                to="#projects"
-                smooth
-                style={{ textDecoration: "none" }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  mb={{ xs: 0.5, md: 2 }}
-                  sx={{
-                    "&:hover": {
-                      color: "text.secondary",
-                    },
-                  }}
-                >
-                  Project
-                </Typography>
-              </NavHashLink>
-              <NavHashLink
-                to="#about"
-                smooth
-                style={{ textDecoration: "none" }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  mb={{ xs: 0.5, md: 2 }}
-                  sx={{
-                    "&:hover": {
-                      color: "text.secondary",
-                    },
-                  }}
-                >
-                  About
-                </Typography>
-              </NavHashLink>
-              <NavHashLink
-                to="#contact"
-                smooth
-                style={{ textDecoration: "none" }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  mb={{ xs: 0.5, md: 2 }}
-                  sx={{
-                    "&:hover": {
-                      color: "text.secondary",
-                    },
-                  }}
-                >
-                  Contact
-                </Typography>
-              </NavHashLink>
+
+            {/* menu options */}
+            <Box sx={navbarStyles.menuSection}>
+              {menuOptions.map((o) => (
+                <NavHashLink to={o.to} smooth style={navbarStyles.hashLink}>
+                  <Typography variant="subtitle1" sx={navbarStyles.textOptions}>
+                    {o.name}
+                  </Typography>
+                </NavHashLink>
+              ))}
             </Box>
           </Box>
         </Drawer>

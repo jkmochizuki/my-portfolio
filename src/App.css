@@ -22,12 +22,47 @@
   }
 }
 
-.visible .container {
-  animation: none;
+.card-box {
+  position: relative;
+  overflow: hidden;
 }
 
-.circle-icon {
-  position: fixed;
-  transform: rotate(180deg);
+.card-box .cardMedia {
+  transition: transform 0.8s;
+}
 
+.card-box:hover .cardMedia {
+  transform: scale(1.2);
+}
+
+.card-box  .overlay {
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(255, 192, 203, 0.97);
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: height 0.5s, bottom 0.5s;
+}
+
+.card-box:hover .overlay {
+  height: 100%;
+  bottom: 0;
+}
+
+.card-box:not(:hover) .overlay {
+  height: 0;
+  bottom: -100%;
+  transition: height 0.5s, bottom 0.5s;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #2af0ea; 
+}
+
+.swiper-pagination-bullet-active, .swiper-pagination-bullet {
+  background-color: #2af0ea;
 }

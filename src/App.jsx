@@ -1,23 +1,23 @@
-import "./App.css";
-import Navbar from "./components/Navbar";
-import { Box, ThemeProvider, Tooltip } from "@mui/material";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Skills from "./components/Skills";
-import { theme } from "./theme/theme";
-import Home from "./components/Home";
-import LeftMenu from "./components/LeftMenu";
-import { BrowserRouter } from "react-router-dom";
-import Toggle from "./components/Toggle";
 import { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Box, ThemeProvider } from "@mui/material";
+import Navbar from "./components/Navbar";
+import LeftMenu from "./components/LeftMenu";
+import Toggle from "./components/Toggle";
+import Home from "./components/Home";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import { theme } from "./theme/theme";
+import "./App.css";
 
 function App() {
   const [isHome, setIsHome] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 0) {
+      if (window.pageYOffset > 50) {
         setIsHome(false);
       } else {
         setIsHome(true);

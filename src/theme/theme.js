@@ -11,7 +11,7 @@ export const theme = createTheme({
       // main: "#6A5B6E",
       // main: "#FF7477",
       // main: "#C97064",
-      main: "#FFC0CB"
+      main: "#FFC0CB",
     },
     warning: {
       main: "#c8b900",
@@ -32,6 +32,7 @@ export const theme = createTheme({
     fontFamily: ["Montserrat", "sans-serif"].join(","),
     h2: {
       color: "#E2E8F0",
+      fontWeight: "bold",
       "@media (max-width:900px)": {
         fontSize: "1.7rem",
       },

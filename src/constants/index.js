@@ -1,3 +1,11 @@
+export const menuOptions = [
+  { name: "Home", to: "#home" },
+  { name: "Skills", to: "#skills" },
+  { name: "Projects", to: "#projects" },
+  { name: "About", to: "#about" },
+  { name: "Contact", to: "#contact" },
+];
+
 export const skills = [
   { name: "JavaScript", class: "devicon-javascript-plain colored" },
   { name: "Ruby", class: "devicon-ruby-plain colored" },

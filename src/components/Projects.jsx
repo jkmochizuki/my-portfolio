@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Grid,
   Card,
@@ -8,18 +9,17 @@ import {
   Link,
   ThemeProvider,
 } from "@mui/material";
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper";
+import { projects } from "../constants";
+import { theme } from "../theme/theme";
+import { TypeAnimation } from "react-type-animation";
+import { useInView } from "react-intersection-observer";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { projects } from "../constants";
-import "./projects.css";
-import { theme } from "../theme/theme";
-import { TypeAnimation } from "react-type-animation";
 import "../App.css";
-import { useInView } from "react-intersection-observer";
+import { projectsStyles } from "../theme/styles";
 
 export default function Projects() {
   const { ref, inView } = useInView({
@@ -36,18 +36,8 @@ export default function Projects() {
       >
         {projects.map((p) => (
           <SwiperSlide>
-            <Card
-              sx={{
-                maxWidth: 600,
-                mx: "auto",
-                [theme.breakpoints.up("md")]: {
-                  boxShadow:
-                    "15px 15px 0px 0px #1c1e26, 15px 15px 0px 0.5px #2af0ea",
-                },
-                borderRadius: 5,
-              }}
-            >
-              <CardHeader title={p.name} sx={{ bgcolor: "#232733" }} />
+            <Card sx={projectsStyles.card}>
+              <CardHeader title={p.name} sx={projectsStyles.cardHeader} />
               <Box className="card-box">
                 <CardMedia
                   component="img"
@@ -55,19 +45,14 @@ export default function Projects() {
                   image={process.env.PUBLIC_URL + p.image}
                   className="cardMedia"
                 />
-                <Box
-                  className="overlay"
-                  display="flex"
-                  flexDirection="column"
-                  justifyContent="center"
-                >
-                  <Typography variant="subtitle1" fontWeight="bold">
+                <Box className="overlay" sx={projectsStyles.cardBox}>
+                  <Typography variant="subtitle1">
                     {p.name !== "Tweeter" && (
                       <span>
                         <Link
                           color="inherit"
                           underline="hover"
-                          sx={{ cursor: "pointer" }}
+                          sx={projectsStyles.link}
                           onClick={() => window.open(p.live, "_blank")}
                         >
                           Live
@@ -78,7 +63,7 @@ export default function Projects() {
                     <Link
                       color="inherit"
                       underline="hover"
-                      sx={{ cursor: "pointer" }}
+                      sx={projectsStyles.link}
                       onClick={() => window.open(p.repo, "_blank")}
                     >
                       Repo
@@ -102,8 +87,7 @@ export default function Projects() {
   return (
     <Grid
       container
-      p={{ xs: 8, md: 15 }}
-      sx={{ maxHeight: { xs: "70vh", md: "100vh" } }}
+      sx={projectsStyles.root}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
       id="projects"
@@ -113,9 +97,10 @@ export default function Projects() {
           <Grid
             xs={12}
             container
-            sx={{ minHeight: "75vh" }}
+            sx={projectsStyles.container}
             className={`container ${inView ? "slide-in" : ""}`}
           >
+            {/* title */}
             <Grid item xs={12}>
               <Typography variant="h4">
                 <TypeAnimation
@@ -124,18 +109,9 @@ export default function Projects() {
                 />
               </Typography>
             </Grid>
-            <Grid
-              container
-              xs={12}
-              sx={{
-                [theme.breakpoints.down("md")]: {
-                  minHeight: "70%",
-                  display: "flex",
-                  alignContent: "space-between",
-                  mb: 5,
-                },
-              }}
-            >
+
+            {/* project slides */}
+            <Grid container xs={12} sx={projectsStyles.slidesContainer}>
               <ProjectSlides />
             </Grid>
           </Grid>
