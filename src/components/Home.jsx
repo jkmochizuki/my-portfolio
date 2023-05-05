@@ -35,7 +35,7 @@ export default function Home() {
           <br />
 
           <Stack direction="row" spacing={2}>
-            <HashLink to="#contact" smooth>
+            <HashLink to="#contact" smooth style={{ textDecoration: "none" }}>
               <Button
                 variant="outlined"
                 borderColor="primary.main"
