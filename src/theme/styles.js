@@ -38,6 +38,7 @@ export const contactStyles = {
     display: "flex",
     alignSelf: "flex-start",
     marginBottom: { xs: 0, md: 5 },
+    marginTop: { xs: 5, md: 0 },
   },
   formContainer: {
     "& .MuiInput-underline:before": {
@@ -101,7 +102,7 @@ export const leftMenuStyles = {
     flexDirection: "column",
   },
   icon: {
-    fontSize: { xs: "medium", md: "x-large" },
+    fontSize: { xs: "large", md: "x-large" },
     cursor: "pointer",
   },
   divider: {
@@ -160,7 +161,7 @@ export const navbarStyles = {
   },
   menuSection: {
     paddingLeft: { xs: 13, md: 20 },
-    left: 0
+    left: 0,
   },
   hashLink: {
     textDecoration: "none",
@@ -233,5 +234,6 @@ export const toggleStyles = {
     fontSize: { xs: "x-large", md: "xxx-large" },
     position: "fixed",
     transform: "rotate(180deg)",
+    margin: { xs: -2, md: 0 },
   },
 };
