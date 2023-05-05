@@ -25,3 +25,9 @@
 .visible .container {
   animation: none;
 }
+
+.circle-icon {
+  position: fixed;
+  transform: rotate(180deg);
+
+}
