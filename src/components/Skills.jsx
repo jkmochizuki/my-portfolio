@@ -5,7 +5,6 @@ import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
 import "../App.css";
-import { Image } from "@mui/icons-material";
 
 export default function Skills() {
   const { ref, inView } = useInView({
@@ -15,12 +14,13 @@ export default function Skills() {
   return (
     <Grid
       container
-      p={{ xs: 8, md: 20 }}
+      p={{ xs: 8, md: 15 }}
       sx={{
         minHeight: "100vh",
       }}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
+      id="skills"
     >
       {inView ? (
         <ThemeProvider theme={theme}>
@@ -42,7 +42,7 @@ export default function Skills() {
               xs={12}
               container
               sx={{
-                minHeight: "60%",
+                minHeight: "50%",
                 display: "flex",
                 justifyContent: "center",
                 alignContent: "space-around",
@@ -53,11 +53,16 @@ export default function Skills() {
                   {s.name === "SQL" ||
                   s.name === "Express.js" ||
                   s.name === "Prisma" ? (
-                    <Box component="img" sx={{ height: { xs: 35, md: 70 } }} src={s.src} alt={s.name} />
+                    <Box
+                      component="img"
+                      sx={{ height: { xs: 35, md: 60 } }}
+                      src={s.src}
+                      alt={s.name}
+                    />
                   ) : (
                     <Icon
                       className={s.class}
-                      sx={{ fontSize: { xs: 35, md: 70 } }}
+                      sx={{ fontSize: { xs: 35, md: 60 } }}
                     ></Icon>
                   )}
                   <Typography variant="body2">{s.name}</Typography>

@@ -17,7 +17,7 @@ export const theme = createTheme({
       main: "#c8b900",
     },
     success: {
-      main: "#39ff14",
+      main: "#72B01D",
     },
     text: {
       primary: "#E2E8F0",

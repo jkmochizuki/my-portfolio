@@ -8,20 +8,23 @@ import Skills from "./components/Skills";
 import { theme } from "./theme/theme";
 import Home from "./components/Home";
 import LeftMenu from "./components/LeftMenu";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Box className="App" bgcolor="background.default">
-        <Navbar />
-        <LeftMenu />
-        <Home id="home" />
-        <Skills id="skills" />
-        <Projects id="projects" />
-        <About id="about" />
-        <Contact id="contact" />
-      </Box>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <Box className="App" bgcolor="background.default">
+          <Navbar />
+          <LeftMenu />
+          <Home />
+          <Skills />
+          <Projects />
+          <About />
+          <Contact />
+        </Box>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 

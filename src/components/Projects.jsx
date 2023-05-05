@@ -102,17 +102,18 @@ export default function Projects() {
   return (
     <Grid
       container
-      p={{ xs: 8, md: 20 }}
-      sx={{ maxHeight: { xs: "50vh", md: "100vh" } }}
+      p={{ xs: 8, md: 15 }}
+      sx={{ maxHeight: { xs: "70vh", md: "100vh" } }}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
+      id="projects"
     >
       {inView ? (
         <ThemeProvider theme={theme}>
           <Grid
             xs={12}
             container
-            sx={{ minHeight: "80vh" }}
+            sx={{ minHeight: "75vh" }}
             className={`container ${inView ? "slide-in" : ""}`}
           >
             <Grid item xs={12}>
@@ -128,7 +129,7 @@ export default function Projects() {
               xs={12}
               sx={{
                 [theme.breakpoints.down("md")]: {
-                  minHeight: "80%",
+                  minHeight: "70%",
                   display: "flex",
                   alignContent: "space-between",
                   mb: 5,

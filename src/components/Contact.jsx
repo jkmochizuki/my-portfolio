@@ -113,10 +113,11 @@ export default function Contact() {
   return (
     <Grid
       container
-      p={{ xs: 8, md: 20 }}
+      p={{ xs: 8, md: 15 }}
       sx={{ height: "90vh" }}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
+      id="contact"
     >
       {inView ? (
         <ThemeProvider theme={theme}>

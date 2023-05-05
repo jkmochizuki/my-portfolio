@@ -13,12 +13,13 @@ export default function About() {
   return (
     <Grid
       container
-      p={{ xs: 8, md: 20 }}
+      p={{ xs: 8, md: 15 }}
       sx={{
         minHeight: "100vh",
       }}
       className={inView ? "section" : "opacity-0"}
       ref={ref}
+      id="about"
     >
       {inView ? (
         <ThemeProvider theme={theme}>

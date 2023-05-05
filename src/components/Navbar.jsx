@@ -10,12 +10,10 @@ import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { theme } from "../theme/theme";
-import * as Scroll from 'react-scroll';
-import { Link } from "react-scroll";
+import { NavHashLink } from "react-router-hash-link";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  let Link= Scroll.Link;
 
   const toggleDrawer = () => {
     setOpen((prev) => !prev);
@@ -52,6 +50,8 @@ export default function Navbar() {
               mt: -4,
             },
           }}
+          disableScrollLock={true}
+          variant="persistent"
         >
           <Box
             sx={{
@@ -81,23 +81,31 @@ export default function Navbar() {
                 pl: { xs: 13, md: 20 },
               }}
             >
-              <Link activeClass="active" to="#skills" spy={true} smooth={true}>
+              <NavHashLink to="#home" smooth>
                 <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
                   Home
                 </Typography>
-              </Link>
-              <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
-                Skills
-              </Typography>
-              <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
-                Project
-              </Typography>
-              <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
-                About
-              </Typography>
-              <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
-                Contact
-              </Typography>
+              </NavHashLink>
+              <NavHashLink to="#skills" smooth>
+                <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
+                  Skills
+                </Typography>
+              </NavHashLink>
+              <NavHashLink to="#projects" smooth>
+                <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
+                  Project
+                </Typography>
+              </NavHashLink>
+              <NavHashLink to="#about" smooth>
+                <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
+                  About
+                </Typography>
+              </NavHashLink>
+              <NavHashLink to="#contact" smooth>
+                <Typography variant="subtitle1" mb={{ xs: 0.5, md: 2 }}>
+                  Contact
+                </Typography>
+              </NavHashLink>
             </Box>
           </Box>
         </Drawer>
