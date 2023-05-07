@@ -104,104 +104,110 @@ export default function Contact() {
     >
       {inView ? (
         <ThemeProvider theme={theme}>
-          {/* title */}
-          <Grid container xs={12} sx={contactStyles.formTitle}>
-            <Typography variant="h4">
-              <TypeAnimation
-                sequence={["", 2000, "Get in touch", 2000]}
-                cursor={false}
-              />
-            </Typography>
-          </Grid>
           <Grid
             xs={12}
             container
             className={`container ${inView ? "slide-in" : ""}`}
           >
-            {/* form */}
-            <Grid
-              item
-              xs={12}
-              md={8}
-              container
-              component="form"
-              spacing={2}
-              validate
-            >
-              <Grid item xs={6}>
-                <TextField
-                  label="Name"
-                  error={error.name}
-                  helperText={errorMessage.name}
-                  variant="standard"
-                  fullWidth
-                  value={form.name}
-                  onChange={(event) =>
-                    setForm((prev) => ({ ...prev, name: event.target.value }))
-                  }
-                  sx={contactStyles.formContainer}
-                  inputProps={{ maxLength: 50 }}
+            {/* title */}
+            <Grid item xs={12} sx={contactStyles.title}>
+              <Typography variant="h4">
+                <TypeAnimation
+                  sequence={["", 2000, "Get in touch", 2000]}
+                  cursor={false}
                 />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField
-                  label="Email"
-                  error={error.email}
-                  helperText={errorMessage.email}
-                  variant="standard"
-                  fullWidth
-                  value={form.email}
-                  onChange={(event) =>
-                    setForm((prev) => ({
-                      ...prev,
-                      email: event.target.value,
-                    }))
-                  }
-                  sx={contactStyles.formContainer}
-                  inputProps={{ maxLength: 50 }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  label="Message"
-                  error={error.message}
-                  helperText={errorMessage.message}
-                  variant="standard"
-                  fullWidth
-                  value={form.message}
-                  multiline
-                  rows={4}
-                  onChange={(event) =>
-                    setForm((prev) => ({
-                      ...prev,
-                      message: event.target.value,
-                    }))
-                  }
-                  sx={contactStyles.formContainer}
-                  inputProps={{ maxLength: 250 }}
-                />
-                <Grid xs={1} mt={5}>
-                  <Button
-                    variant="contained"
-                    sx={contactStyles.sendButton}
-                    onClick={handleClick}
-                  >
-                    Send
-                  </Button>
-                </Grid>
-              </Grid>
+              </Typography>
             </Grid>
 
-            {/* name and email */}
-            <Grid item xs={12} md={4} sx={contactStyles.infoContainer}>
-              <Typography variant="body1" fontWeight="bold">
-                Juliana Mochizuki
-              </Typography>
-              <Typography variant="body1">Full-Stack Web Developer</Typography>
-              <Typography variant="body1" fontWeight="bold">
-                Email
-              </Typography>
-              <Typography variant="body1">jkmochizuki@gmail.com</Typography>
+            {/* form and email */}
+            <Grid item container xs={12} sx={contactStyles.container}>
+              {/* form */}
+              <Grid
+                item
+                xs={12}
+                md={8}
+                container
+                component="form"
+                spacing={2}
+                validate
+              >
+                <Grid item xs={6}>
+                  <TextField
+                    label="Name"
+                    error={error.name}
+                    helperText={errorMessage.name}
+                    variant="standard"
+                    fullWidth
+                    value={form.name}
+                    onChange={(event) =>
+                      setForm((prev) => ({ ...prev, name: event.target.value }))
+                    }
+                    sx={contactStyles.formContainer}
+                    inputProps={{ maxLength: 50 }}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <TextField
+                    label="Email"
+                    error={error.email}
+                    helperText={errorMessage.email}
+                    variant="standard"
+                    fullWidth
+                    value={form.email}
+                    onChange={(event) =>
+                      setForm((prev) => ({
+                        ...prev,
+                        email: event.target.value,
+                      }))
+                    }
+                    sx={contactStyles.formContainer}
+                    inputProps={{ maxLength: 50 }}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Message"
+                    error={error.message}
+                    helperText={errorMessage.message}
+                    variant="standard"
+                    fullWidth
+                    value={form.message}
+                    multiline
+                    rows={4}
+                    onChange={(event) =>
+                      setForm((prev) => ({
+                        ...prev,
+                        message: event.target.value,
+                      }))
+                    }
+                    sx={contactStyles.formContainer}
+                    inputProps={{ maxLength: 250 }}
+                  />
+                  <Grid xs={1} mt={5}>
+                    <Button
+                      variant="contained"
+                      sx={contactStyles.sendButton}
+                      onClick={handleClick}
+                    >
+                      Send
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Grid>
+
+              {/* email */}
+              <Grid item xs={12} md={4} sx={contactStyles.infoContainer}>
+                <Typography variant="body1" fontWeight="bold">
+                  Juliana Mochizuki
+                </Typography>
+                <Typography variant="body1">
+                  Full Stack Web Developer
+                </Typography>
+                <Typography variant="body1" fontWeight="bold">
+                  Email
+                </Typography>
+                <Typography variant="body1">jkmochizuki@gmail.com</Typography>
+              </Grid>
             </Grid>
           </Grid>
 

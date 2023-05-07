@@ -10,16 +10,15 @@ export default function Home() {
       <Grid container xs={12} sx={homeStyles.root} id="home">
         <Grid item xs={12} sx={homeStyles.section}>
           <Typography variant="body1" color="primary.main">
-            Hey! My name is
+            Hello! My name is
           </Typography>
           <br />
-          <Typography variant="h2">Juliana Mochizuki.</Typography>
-          <Typography variant="h3">I am a Full Stack Web Developer.</Typography>
+          <Typography variant="h2">Juliana Mochizuki</Typography>
+          <Typography variant="h3">I am a Full Stack Web Developer</Typography>
           <br />
           <br />
           <Typography xs={3} variant="body1">
-            Web Developer based in Metro Vancouver with a degree in Chemical
-            Engineering and background in Accounting.
+          Analytical thinker with a background in Chemical Engineering and Accounting, turned Full Stack Web Developer.
           </Typography>
           <br />
           <br />

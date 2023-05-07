@@ -39,7 +39,8 @@
   height: 0;
   position: absolute;
   bottom: 0;
-  background-color: rgba(255, 192, 203, 0.97);
+  background-color: rgba(220, 81, 132, 0.95);
+  color: "text.primary";
   left: 0;
   right: 0;
   z-index: 9999;

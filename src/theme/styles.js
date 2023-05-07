@@ -2,8 +2,8 @@ import { theme } from "../theme/theme";
 
 export const aboutStyles = {
   root: {
-    height: "100vh",
-    padding: { xs: 8, md: 15 },
+    height: { xs: "auto", md: "100vh" },
+    padding: { xs: 8, md: 18 },
   },
   container: {
     alignItems: "center",
@@ -11,53 +11,69 @@ export const aboutStyles = {
   },
   title: {
     textAlign: "center",
+    marginBottom: { xs: 5, md: 5 },
   },
   body: {
     textAlign: "left",
   },
   imageContainer: {
     marginTop: { xs: 5, md: 0 },
+    display: "flex",
     alignSelf: "center",
-    textAlign: "center",
+    // justifyContent: "flex-end",
+    justifyContent: {
+      xs: "center",
+      md: "flex-end",
+    },
   },
   image: {
     border: "1px solid",
     borderColor: "primary.main",
     borderRadius: "50%",
-    height: { xs: 150, md: 300 },
-    width: { xs: 150, md: 300 },
+    height: { xs: 150, md: 250 },
+    width: { xs: 150, md: 250 },
   },
 };
 
 export const contactStyles = {
   root: {
-    minHeight: "70vh",
-    padding: { xs: 8, md: 15 },
+    minHeight: { xs: "auto", md: "75vh" },
+    padding: { xs: 8, md: 18 },
   },
-  formTitle: {
+  container: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  title: {
     display: "flex",
     alignSelf: "flex-start",
-    marginBottom: { xs: 0, md: 5 },
-    marginTop: { xs: 5, md: 0 },
+    marginBottom: { xs: 5, md: 10 },
   },
   formContainer: {
     "& .MuiInput-underline:before": {
-      borderBottomColor: "white",
+      borderBottomColor: "text.primary",
     },
   },
   sendButton: {
     borderRadius: 2,
     fontSize: { xs: 10, md: 15 },
+    marginBottom: { xs: 5, md: 0 },
   },
   infoContainer: {
-    alignSelf: "center",
-    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
 };
 
 export const homeStyles = {
   root: {
     height: "100vh",
+    padding: {
+      xs: 8,
+      md: 18,
+    },
   },
   section: {
     display: "flex",
@@ -65,10 +81,6 @@ export const homeStyles = {
     justifyContent: "center",
     alignItems: "flex-start",
     textAlign: "left",
-    padding: {
-      xs: 8,
-      md: 15,
-    },
   },
   button: {
     borderColor: "primary.main",
@@ -84,31 +96,34 @@ export const homeStyles = {
   },
 };
 
-export const leftMenuStyles = {
+export const rightSideLinksStyles = {
   root: {
     position: "fixed",
     color: "text.secondary",
-    height: "40vh",
-    bottom: 0,
+    height: "100vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignContent: "flex-start",
-    paddingLeft: { xs: 3, md: 6 },
-    marginBottom: { xs: -8, md: 0 },
-  },
-  section: {
-    display: "flex",
-    flexDirection: "column",
+    alignContent: "flex-end",
+    paddingRight: { xs: 4, md: 6 },
   },
   icon: {
-    fontSize: { xs: "large", md: "x-large" },
+    fontSize: { xs: "small", md: "large" },
     cursor: "pointer",
+    alignSelf: "center",
+    "&:hover": {
+      color: "primary.main",
+    },
   },
   divider: {
-    width: "0.2px",
-    height: "25vh",
+    width: "0.1px",
+    height: "40%",
     alignSelf: "center",
+  },
+  text: {
+    writingMode: "vertical-rl",
+    alignSelf: "center",
+    fontSize: { xs: "8px", md: "10px" },
   },
 };
 
@@ -117,7 +132,7 @@ export const navbarStyles = {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "space-between",
-    p: { xs: 3, md: 6 },
+    p: { xs: 4, md: 6 },
     backgroundColor: "transparent",
     boxShadow: "none",
   },
@@ -132,7 +147,7 @@ export const navbarStyles = {
   },
   iconButton: {
     bgcolor: "secondary.main",
-    color: "background.default",
+    color: "text.primary",
     "&:hover": {
       bgcolor: "secondary.dark",
     },
@@ -141,16 +156,16 @@ export const navbarStyles = {
     fontSize: { xs: "medium", md: "xx-large" },
   },
   drawerPaperProps: {
-    height: { xs: 270, md: 450 },
-    width: { xs: 270, md: 450 },
+    height: { xs: 200, md: 350 },
+    width: { xs: 200, md: 350 },
     borderBottomLeftRadius: "100%",
-    mt: { xs: -4.5, md: -3 },
+    mt: { xs: -1, md: -2 },
   },
   drawerContainer: {
     width: "100%",
     height: "100%",
     backgroundColor: "secondary.main",
-    color: "background.default",
+    color: "text.primary",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -158,29 +173,35 @@ export const navbarStyles = {
   },
   closeIcon: {
     fontSize: { xs: "medium", md: "xx-large" },
+    color: "text.primary",
+    marginTop: { xs: -1, md: 0 },
+    paddingRight: { xs: 1, md: 0 },
   },
   menuSection: {
-    paddingLeft: { xs: 13, md: 20 },
+    paddingLeft: { xs: 5, md: 10 },
     left: 0,
   },
   hashLink: {
     textDecoration: "none",
   },
   textOptions: {
-    marginBottom: { xs: 0.5, md: 2 },
+    marginBottom: { xs: 0, md: 1 },
+    fontSize: { xs: "small", md: "large" },
+    color: "text.primary",
+    textAlign: "flex-start",
     "&:hover": {
-      color: "text.secondary",
+      fontWeight: "bold",
     },
   },
 };
 
 export const projectsStyles = {
   root: {
-    padding: { xs: 8, md: 15 },
-    maxHeight: { xs: "70vh", md: "100vh" },
+    padding: { xs: 8, md: 18 },
+    height: { xs: "auto", md: "100vh" },
   },
-  container: {
-    minHeight: "75vh",
+  title: {
+    marginBottom: { xs: 5, md: 10 },
   },
   slidesContainer: {
     [theme.breakpoints.down("md")]: {
@@ -191,7 +212,7 @@ export const projectsStyles = {
     },
   },
   card: {
-    maxWidth: 600,
+    maxWidth: 500,
     mx: "auto",
     borderRadius: 5,
     [theme.breakpoints.up("md")]: {
@@ -214,11 +235,15 @@ export const projectsStyles = {
 
 export const skillsStyles = {
   root: {
-    padding: { xs: 8, md: 15 },
-    height: "100vh",
+    padding: { xs: 8, md: 18 },
+    height: { xs: "auto", md: "100vh" },
   },
   container: {
-    minHeight: "70vh",
+    justifyContent: "center",
+    rowGap: theme.spacing(3),
+  },
+  title: {
+    marginBottom: { xs: 5, md: 10 },
   },
   iconImage: {
     height: { xs: 35, md: 60 },
@@ -230,10 +255,19 @@ export const skillsStyles = {
 
 export const toggleStyles = {
   root: {
+    position: "fixed",
+    padding: { xs: 4, md: 9 },
+    bottom: 0,
+    right: 0,
+  },
+  icon: {
     color: "text.secondary",
-    fontSize: { xs: "x-large", md: "xxx-large" },
+    fontSize: { xs: "x-large", md: "xx-large" },
     position: "fixed",
     transform: "rotate(180deg)",
     margin: { xs: -2, md: 0 },
+    "&:hover": {
+      color: "primary.main",
+    },
   },
 };

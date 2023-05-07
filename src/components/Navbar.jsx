@@ -36,6 +36,10 @@ export default function Navbar() {
     };
   }, []);
 
+  const handleClink = () => {
+    setOpen(false);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <AppBar sx={navbarStyles.root}>
@@ -84,8 +88,13 @@ export default function Navbar() {
             {/* menu options */}
             <Box sx={navbarStyles.menuSection}>
               {menuOptions.map((o) => (
-                <NavHashLink to={o.to} smooth style={navbarStyles.hashLink}>
-                  <Typography variant="subtitle1" sx={navbarStyles.textOptions}>
+                <NavHashLink
+                  to={o.to}
+                  smooth
+                  style={navbarStyles.hashLink}
+                  onClick={handleClink}
+                >
+                  <Typography sx={navbarStyles.textOptions}>
                     {o.name}
                   </Typography>
                 </NavHashLink>

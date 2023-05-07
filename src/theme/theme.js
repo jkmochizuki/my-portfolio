@@ -11,7 +11,8 @@ export const theme = createTheme({
       // main: "#6A5B6E",
       // main: "#FF7477",
       // main: "#C97064",
-      main: "#FFC0CB",
+      // main: "#FFC0CB",
+      main: '#ea2a6f',
     },
     warning: {
       main: "#c8b900",
@@ -59,20 +60,21 @@ export const theme = createTheme({
     h6: {
       color: "#2af0ea",
       fontWeight: "bold",
+      fontSize: "1rem",
       "@media (max-width:900px)": {
         fontSize: "0.7rem",
       },
     },
     subtitle1: {
-      color: "#1c1e26",
-      fontSize: "1.3rem",
+      color: "text.primary",
+      fontSize: "1.2rem",
       "@media (max-width:900px)": {
         fontSize: "0.7rem",
       },
     },
     subtitle2: {
-      color: "#1c1e26",
-      fontSize: "1.2rem",
+      color: "text.primary",
+      fontSize: "1.0rem",
       "@media (max-width:900px)": {
         fontSize: "0.5rem",
       },

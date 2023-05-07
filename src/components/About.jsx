@@ -27,19 +27,19 @@ export default function About() {
             className={`container ${inView ? "slide-in" : ""}`}
           >
             {/* title */}
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={aboutStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 2000, "About Me", 2000]}
+                  sequence={["", 2000, "About me", 2000]}
                   cursor={false}
                 />
               </Typography>
             </Grid>
 
             {/* text and image */}
-            <Grid container xs={12} mt={{ xs: 2, md: -10 }}>
+            <Grid item container xs={12}>
               {/* text */}
-              <Grid item xs={12} md={7} alignSelf="center">
+              <Grid item xs={12} md={8}>
                 <Typography variant="body1" sx={aboutStyles.body}>
                   Hello! My name is Juliana. As a web developer, I am
                   comfortable working on both the frontend and backend. I have a
@@ -48,18 +48,18 @@ export default function About() {
                   fresh challenges. I approach my work with great motivation and
                   gratitude for every opportunity that comes my way.
                   <Typography variant="h6">
-                    My goal is to push my limits and constantly improve my
-                    skills and abilities.
+                    I believe in challenging myself and becoming the best
+                    version I can be, constantly improving my skills and
+                    abilities.
                   </Typography>
                   <br />
                   Apart from coding, I enjoy traveling, experimenting with new
-                  foods, photography, and exploring new hobbies. Thank you for
-                  visiting my site, and I look forward to connecting with you
-                  soon!
+                  foods, and exploring new hobbies. Thank you for visiting my
+                  site, and I look forward to connecting with you soon!
                 </Typography>
               </Grid>
               {/* image */}
-              <Grid item xs={12} md={5} sx={aboutStyles.imageContainer}>
+              <Grid item xs={12} md={4} sx={aboutStyles.imageContainer}>
                 <Box
                   component="img"
                   src={process.env.PUBLIC_URL + "/images/headshot-juliana.jpg"}

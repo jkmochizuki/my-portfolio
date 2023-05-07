@@ -70,7 +70,7 @@ export default function Projects() {
                     </Link>
                   </Typography>
                   <br />
-                  <Typography variant="subtitle2">{p.about}</Typography>
+                  <Typography variant="subtitle2" >{p.about}</Typography>
                   <br />
                   <Typography variant="subtitle2">
                     Tech Stack: {p.stack}
@@ -101,7 +101,7 @@ export default function Projects() {
             className={`container ${inView ? "slide-in" : ""}`}
           >
             {/* title */}
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={projectsStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
                   sequence={["", 2000, "Projects", 2000]}
@@ -111,7 +111,7 @@ export default function Projects() {
             </Grid>
 
             {/* project slides */}
-            <Grid container xs={12} sx={projectsStyles.slidesContainer}>
+            <Grid item xs={12} >
               <ProjectSlides />
             </Grid>
           </Grid>

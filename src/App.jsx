@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { Box, ThemeProvider } from "@mui/material";
+import { Box, Hidden, ThemeProvider } from "@mui/material";
 import Navbar from "./components/Navbar";
-import LeftMenu from "./components/LeftMenu";
 import Toggle from "./components/Toggle";
 import Home from "./components/Home";
 import Skills from "./components/Skills";
@@ -11,6 +10,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import { theme } from "./theme/theme";
 import "./App.css";
+import RightSideLinks from "./components/RightSideLinks";
 
 function App() {
   const [isHome, setIsHome] = useState(true);
@@ -34,7 +34,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <Box className="App" bgcolor="background.default">
           <Navbar />
-          <LeftMenu />
+          <Hidden smDown>
+            <RightSideLinks />
+          </Hidden>
           {!isHome && <Toggle />}
           <Home />
           <Skills />

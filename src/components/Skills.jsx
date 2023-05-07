@@ -28,7 +28,7 @@ export default function Skills() {
             className={`container ${inView ? "slide-in" : ""}`}
           >
             {/* title */}
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={skillsStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
                   sequence={["", 1500, "Skills", 2000]}
@@ -38,7 +38,7 @@ export default function Skills() {
             </Grid>
 
             {/* skills */}
-            <Grid xs={12} container sx={{ justifyContent: "center" }}>
+            <Grid item xs={12} container sx={skillsStyles.container}>
               {skills.map((s) => (
                 <Grid item xs={4} md={2.2} key={s.name}>
                   {s.name === "SQL" ||
