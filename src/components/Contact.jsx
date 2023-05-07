@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from "react";
 import {
   Alert,
+  Box,
   Button,
   Grid,
+  Hidden,
   Snackbar,
+  Stack,
   TextField,
   ThemeProvider,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import EmailIcon from "@mui/icons-material/Email";
+import DescriptionIcon from "@mui/icons-material/Description";
 import emailjs from "@emailjs/browser";
 import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
@@ -32,8 +40,11 @@ export default function Contact() {
     message: false,
   });
 
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
+    threshold: 0.5,
   });
 
   useEffect(() => {
@@ -98,29 +109,34 @@ export default function Contact() {
     <Grid
       container
       sx={contactStyles.root}
-      className={inView ? "section" : "opacity-0"}
+      className={!isSmallScreen && inView ? "section" : "opacity-0"}
       ref={ref}
       id="contact"
     >
       {inView ? (
         <ThemeProvider theme={theme}>
           <Grid
-            xs={12}
             container
-            className={`container ${inView ? "slide-in" : ""}`}
+            className={`container ${
+              !isSmallScreen && inView ? "slide-in" : ""
+            }`}
           >
             {/* title */}
             <Grid item xs={12} sx={contactStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 2000, "Get in touch", 2000]}
+                  sequence={
+                    isSmallScreen
+                      ? ["Get in touch", 2000]
+                      : ["", 2000, "Get in touch", 2000]
+                  }
                   cursor={false}
                 />
               </Typography>
             </Grid>
 
             {/* form and email */}
-            <Grid item container xs={12} sx={contactStyles.container}>
+            <Grid item container sx={contactStyles.container}>
               {/* form */}
               <Grid
                 item
@@ -129,7 +145,6 @@ export default function Contact() {
                 container
                 component="form"
                 spacing={2}
-                validate
               >
                 <Grid item xs={6}>
                   <TextField
@@ -183,7 +198,7 @@ export default function Contact() {
                     sx={contactStyles.formContainer}
                     inputProps={{ maxLength: 250 }}
                   />
-                  <Grid xs={1} mt={5}>
+                  <Grid item xs={1} mt={5}>
                     <Button
                       variant="contained"
                       sx={contactStyles.sendButton}
@@ -195,8 +210,54 @@ export default function Contact() {
                 </Grid>
               </Grid>
 
+              {/* icons */}
+              <Hidden smUp>
+                <Grid item xs={12}>
+                  <Stack direction="row" spacing={1} sx={contactStyles.icons}>
+                    <LinkedInIcon
+                      sx={contactStyles.icon}
+                      onClick={() =>
+                        window.open(
+                          "https://www.linkedin.com/in/jkmochizuki/",
+                          "_blank"
+                        )
+                      }
+                    />
+                    <GitHubIcon
+                      sx={contactStyles.icon}
+                      onClick={() =>
+                        window.open("https://github.com/jkmochizuki", "_blank")
+                      }
+                    />
+                    <EmailIcon
+                      sx={contactStyles.icon}
+                      onClick={() =>
+                        window.open("mailto:jkmochizuki@gmail.com")
+                      }
+                    />
+                    <DescriptionIcon
+                      sx={contactStyles.icon}
+                      onClick={() =>
+                        window.open(
+                          "https://resume.creddle.io/resume/3bkcgktacjr",
+                          "_blank"
+                        )
+                      }
+                    />
+                  </Stack>
+                </Grid>
+              </Hidden>
+
               {/* email */}
               <Grid item xs={12} md={4} sx={contactStyles.infoContainer}>
+                <Hidden smDown>
+                  <Box
+                    component="img"
+                    src={process.env.PUBLIC_URL + "/images/logo.png"}
+                    alt=""
+                    sx={contactStyles.logo}
+                  />
+                </Hidden>
                 <Typography variant="body1" fontWeight="bold">
                   Juliana Mochizuki
                 </Typography>
@@ -213,7 +274,7 @@ export default function Contact() {
 
           {/* message sent confirmation */}
           <Snackbar
-            open={message}
+            open={message.length > 0}
             autoHideDuration={6000}
             onClose={() => setMessage("")}
             anchorOrigin={{
