@@ -46,7 +46,7 @@ export const projects = [
     about:
       "A coding-oriented flashcards app to help developers and students retain languages and frameworks concepts effectively.",
     stack:
-      "React, Axios, Nodejs, Express.js, Prisma ORM, PostgreSQL, Auth0, OpenAPI, Material UI.",
+      "React, Axios, Node.js, Express.js, Prisma, PostgreSQL, Auth0, OpenAI API, Material UI.",
     live: "https://codi-app.netlify.app",
     repo: "https://github.com/PavelKotlov/codi-client",
   },
@@ -55,16 +55,15 @@ export const projects = [
     image: "/images/scheduler-project.png",
     about:
       "React scheduler application that allows users to book and cancel interviews.",
-    stack: "React, Axios, Classnames, Normalize, Storybook.",
+    stack: "React, Axios, Storybook, Cypress, Jest.",
     live: "https://interviewscheduler-app.netlify.app/",
     repo: "https://github.com/jkmochizuki/scheduler",
   },
   {
     name: "TinyApp",
     image: "/images/tinyapp-project.png",
-    about:
-      "TinyApp is a full stack web application that allows users to shorten long URLs.",
-    stack: "Node, Express",
+    about: "Web application that allows users to shorten long URLs.",
+    stack: "Node.js, Express.js, EJS",
     live: "https://tinyapp.herokuapp.com/",
     repo: "https://github.com/jkmochizuki/tinyapp",
   },
@@ -72,8 +71,8 @@ export const projects = [
   {
     name: "Tweeter",
     image: "/images/tweeter-project.png",
-    about: "Tweeter is a simple, single-page Twitter clone.",
-    stack: "Express, jQuery, PostgreSQL, Node.",
+    about: "A simple, single-page Twitter clone.",
+    stack: "Express.js, Node.js, jQuery, PostgreSQL.",
     live: "",
     repo: "https://github.com/jkmochizuki/tweeter",
   },

@@ -8,6 +8,7 @@ import {
   Box,
   Link,
   ThemeProvider,
+  useMediaQuery,
 } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper";
@@ -22,8 +23,11 @@ import "../App.css";
 import { projectsStyles } from "../theme/styles";
 
 export default function Projects() {
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
+    threshold: 0.25,
   });
 
   const ProjectSlides = () => {
@@ -35,13 +39,13 @@ export default function Projects() {
         pagination={{ clickable: true }}
       >
         {projects.map((p) => (
-          <SwiperSlide>
+          <SwiperSlide key={p.name}>
             <Card sx={projectsStyles.card}>
               <CardHeader title={p.name} sx={projectsStyles.cardHeader} />
               <Box className="card-box">
                 <CardMedia
                   component="img"
-                  maxHeight="450"
+                  sx={projectsStyles.CardMedia}
                   image={process.env.PUBLIC_URL + p.image}
                   className="cardMedia"
                 />
@@ -70,7 +74,7 @@ export default function Projects() {
                     </Link>
                   </Typography>
                   <br />
-                  <Typography variant="subtitle2" >{p.about}</Typography>
+                  <Typography variant="subtitle2">{p.about}</Typography>
                   <br />
                   <Typography variant="subtitle2">
                     Tech Stack: {p.stack}
@@ -88,30 +92,35 @@ export default function Projects() {
     <Grid
       container
       sx={projectsStyles.root}
-      className={inView ? "section" : "opacity-0"}
+      className={!isSmallScreen && inView ? "section" : "opacity-0"}
       ref={ref}
       id="projects"
     >
       {inView ? (
         <ThemeProvider theme={theme}>
           <Grid
-            xs={12}
             container
             sx={projectsStyles.container}
-            className={`container ${inView ? "slide-in" : ""}`}
+            className={`container ${
+              !isSmallScreen && inView ? "slide-in" : ""
+            }`}
           >
             {/* title */}
             <Grid item xs={12} sx={projectsStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 2000, "Projects", 2000]}
+                  sequence={
+                    isSmallScreen
+                      ? ["Projects", 2000]
+                      : ["", 2000, "Projects", 2000]
+                  }
                   cursor={false}
                 />
               </Typography>
             </Grid>
 
             {/* project slides */}
-            <Grid item xs={12} >
+            <Grid item xs={12}>
               <ProjectSlides />
             </Grid>
           </Grid>

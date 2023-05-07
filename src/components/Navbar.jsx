@@ -14,9 +14,15 @@ import { NavHashLink } from "react-router-hash-link";
 import { menuOptions } from "../constants";
 import { navbarStyles } from "../theme/styles";
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [open, setOpen] = useState(false);
   const [isHome, setIsHome] = useState(true);
+  // const { isctive, ...rest } = props;
+
+  // function Wrapper(props) {
+  //   const { isActive, ...rest } = props
+  //     return <div {...rest} />
+  // }
 
   const toggleDrawer = () => {
     setOpen((prev) => !prev);
@@ -68,31 +74,23 @@ export default function Navbar() {
           PaperProps={{
             sx: navbarStyles.drawerPaperProps,
           }}
-          disableScrollLock={true}
           variant="persistent"
         >
           <Box sx={navbarStyles.drawerContainer}>
             {/* close button */}
-            <IconButton
-              onClick={toggleDrawer}
-              sx={{
-                alignSelf: "flex-end",
-                marginTop: { xs: 1, md: -1 },
-                marginRight: { xs: 3, md: 6 },
-                color: "background.default",
-              }}
-            >
+            <IconButton onClick={toggleDrawer} sx={navbarStyles.closeButton}>
               <CloseIcon sx={navbarStyles.closeIcon} />
             </IconButton>
 
             {/* menu options */}
-            <Box sx={navbarStyles.menuSection}>
+            <Box sx={navbarStyles.menuSection} >
               {menuOptions.map((o) => (
                 <NavHashLink
                   to={o.to}
                   smooth
                   style={navbarStyles.hashLink}
                   onClick={handleClink}
+                  key={o.name}
                 >
                   <Typography sx={navbarStyles.textOptions}>
                     {o.name}

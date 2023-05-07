@@ -7,7 +7,7 @@ import { homeStyles } from "../theme/styles";
 export default function Home() {
   return (
     <ThemeProvider theme={theme}>
-      <Grid container xs={12} sx={homeStyles.root} id="home">
+      <Grid container item xs={12} sx={homeStyles.root} id="home">
         <Grid item xs={12} sx={homeStyles.section}>
           <Typography variant="body1" color="primary.main">
             Hello! My name is

@@ -1,36 +1,50 @@
 import React from "react";
-import { Box, Grid, ThemeProvider, Typography } from "@mui/material";
+import {
+  Box,
+  Grid,
+  ThemeProvider,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
 import { aboutStyles } from "../theme/styles";
 
 export default function About() {
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
+    threshold: 0.25,
   });
 
   return (
     <Grid
       container
       sx={aboutStyles.root}
-      className={inView ? "section" : "opacity-0"}
+      className={!isSmallScreen && inView ? "section" : "opacity-0"}
       ref={ref}
       id="about"
     >
       {inView ? (
         <ThemeProvider theme={theme}>
           <Grid
-            xs={12}
             container
             sx={aboutStyles.container}
-            className={`container ${inView ? "slide-in" : ""}`}
+            className={`container ${
+              !isSmallScreen && inView ? "slide-in" : ""
+            }`}
           >
             {/* title */}
             <Grid item xs={12} sx={aboutStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 2000, "About me", 2000]}
+                  sequence={
+                    isSmallScreen
+                      ? ["About me", 2000]
+                      : ["", 2000, "About me", 2000]
+                  }
                   cursor={false}
                 />
               </Typography>
@@ -47,12 +61,13 @@ export default function About() {
                   technologies, and I am always enthusiastic about embracing
                   fresh challenges. I approach my work with great motivation and
                   gratitude for every opportunity that comes my way.
-                  <Typography variant="h6">
-                    I believe in challenging myself and becoming the best
-                    version I can be, constantly improving my skills and
-                    abilities.
-                  </Typography>
-                  <br />
+                </Typography>
+                <Typography variant="body1" sx={aboutStyles.bodyBold}>
+                  I believe in challenging myself and becoming the best version
+                  I can be, constantly improving my skills and abilities.
+                </Typography>
+                <br />
+                <Typography variant="body1" sx={aboutStyles.body}>
                   Apart from coding, I enjoy traveling, experimenting with new
                   foods, and exploring new hobbies. Thank you for visiting my
                   site, and I look forward to connecting with you soon!

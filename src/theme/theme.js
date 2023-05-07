@@ -12,13 +12,14 @@ export const theme = createTheme({
       // main: "#FF7477",
       // main: "#C97064",
       // main: "#FFC0CB",
-      main: '#ea2a6f',
+      // main: "#f0a82a",
+      main: "#f06292"
     },
     warning: {
       main: "#c8b900",
     },
     success: {
-      main: "#72B01D",
+      main: "#2af0ea",
     },
     text: {
       primary: "#E2E8F0",
@@ -41,7 +42,7 @@ export const theme = createTheme({
     h3: {
       color: "#E2E8F0",
       "@media (max-width:900px)": {
-        fontSize: "1.7rem",
+        fontSize: "1.5rem",
       },
     },
     h4: {
@@ -54,7 +55,7 @@ export const theme = createTheme({
     h5: {
       color: "#E2E8F0",
       "@media (max-width:900px)": {
-        fontSize: "0.8rem",
+        fontSize: "1rem",
       },
     },
     h6: {
@@ -62,7 +63,7 @@ export const theme = createTheme({
       fontWeight: "bold",
       fontSize: "1rem",
       "@media (max-width:900px)": {
-        fontSize: "0.7rem",
+        fontSize: "0.9rem",
       },
     },
     subtitle1: {
@@ -73,7 +74,7 @@ export const theme = createTheme({
       },
     },
     subtitle2: {
-      color: "text.primary",
+      color: "white",
       fontSize: "1.0rem",
       "@media (max-width:900px)": {
         fontSize: "0.5rem",
@@ -82,7 +83,7 @@ export const theme = createTheme({
     body1: {
       color: "#A0AEC0",
       "@media (max-width:900px)": {
-        fontSize: "1rem",
+        fontSize: "0.9rem",
       },
     },
     body2: {

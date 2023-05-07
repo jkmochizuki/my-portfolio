@@ -16,11 +16,15 @@ export const aboutStyles = {
   body: {
     textAlign: "left",
   },
+  bodyBold: {
+    color: "primary.main",
+    fontWeight: "bold",
+    textAlign: "left",
+  },
   imageContainer: {
     marginTop: { xs: 5, md: 0 },
     display: "flex",
     alignSelf: "center",
-    // justifyContent: "flex-end",
     justifyContent: {
       xs: "center",
       md: "flex-end",
@@ -64,6 +68,23 @@ export const contactStyles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    paddingLeft: { xs: 0, md: 15 },
+  },
+  icons: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  icon: {
+    fontSize: "large",
+    color: "text.secondary",
+  },
+  logo: {
+    height: 50,
+    width: 50,
+    marginBottom: 1,
+    marginTop: -5,
   },
 };
 
@@ -76,6 +97,7 @@ export const homeStyles = {
     },
   },
   section: {
+    height: "auto",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -108,7 +130,7 @@ export const rightSideLinksStyles = {
     paddingRight: { xs: 4, md: 6 },
   },
   icon: {
-    fontSize: { xs: "small", md: "large" },
+    fontSize: "large",
     cursor: "pointer",
     alignSelf: "center",
     "&:hover": {
@@ -156,10 +178,11 @@ export const navbarStyles = {
     fontSize: { xs: "medium", md: "xx-large" },
   },
   drawerPaperProps: {
-    height: { xs: 200, md: 350 },
-    width: { xs: 200, md: 350 },
+    height: { xs: 220, md: 350 },
+    width: { xs: 220, md: 350 },
     borderBottomLeftRadius: "100%",
-    mt: { xs: -1, md: -2 },
+    mt: { xs: -2, md: -2 },
+    disableScrollLock: true,
   },
   drawerContainer: {
     width: "100%",
@@ -171,15 +194,24 @@ export const navbarStyles = {
     justifyContent: "center",
     alignItems: "center",
   },
+  closeButton: {
+    alignSelf: "flex-end",
+    marginTop: { xs: 1, md: -1 },
+    marginRight: { xs: 3, md: 6 },
+    color: "background.default",
+  },
   closeIcon: {
     fontSize: { xs: "medium", md: "xx-large" },
-    color: "text.primary",
+    color: "white",
     marginTop: { xs: -1, md: 0 },
     paddingRight: { xs: 1, md: 0 },
   },
   menuSection: {
     paddingLeft: { xs: 5, md: 10 },
     left: 0,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
   },
   hashLink: {
     textDecoration: "none",
@@ -187,10 +219,11 @@ export const navbarStyles = {
   textOptions: {
     marginBottom: { xs: 0, md: 1 },
     fontSize: { xs: "small", md: "large" },
-    color: "text.primary",
+    color: "white",
     textAlign: "flex-start",
     "&:hover": {
       fontWeight: "bold",
+      color: "text.primary",
     },
   },
 };
@@ -208,12 +241,15 @@ export const projectsStyles = {
       minHeight: "70%",
       display: "flex",
       alignContent: "space-between",
-      mb: 5,
     },
+  },
+  container: {
+    marginTop: -5,
   },
   card: {
     maxWidth: 500,
     mx: "auto",
+    marginBottom: 5,
     borderRadius: 5,
     [theme.breakpoints.up("md")]: {
       boxShadow: "15px 15px 0px 0px #1c1e26, 15px 15px 0px 0.5px #2af0ea",
@@ -226,6 +262,9 @@ export const projectsStyles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+  },
+  cardMedia: {
+    maxHeight: 450,
   },
   link: {
     cursor: "pointer",
@@ -241,6 +280,7 @@ export const skillsStyles = {
   container: {
     justifyContent: "center",
     rowGap: theme.spacing(3),
+    marginTop: -3,
   },
   title: {
     marginBottom: { xs: 5, md: 10 },

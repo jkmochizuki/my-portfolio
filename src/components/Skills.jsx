@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Grid, Icon, ThemeProvider, Typography } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Icon,
+  ThemeProvider,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { skills } from "../constants";
 import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
@@ -7,31 +14,39 @@ import { useInView } from "react-intersection-observer";
 import { skillsStyles } from "../theme/styles";
 
 export default function Skills() {
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
+    threshold: 0.25,
   });
 
   return (
     <Grid
       container
       sx={skillsStyles.root}
-      className={inView ? "section" : "opacity-0"}
+      className={!isSmallScreen && inView ? "section" : "opacity-0"}
       ref={ref}
       id="skills"
     >
       {inView ? (
         <ThemeProvider theme={theme}>
           <Grid
-            xs={12}
             container
             sx={skillsStyles.container}
-            className={`container ${inView ? "slide-in" : ""}`}
+            className={`container ${
+              !isSmallScreen && inView ? "slide-in" : ""
+            }`}
           >
             {/* title */}
             <Grid item xs={12} sx={skillsStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 1500, "Skills", 2000]}
+                  sequence={
+                    isSmallScreen
+                      ? ["Skills", 2000]
+                      : ["", 2000, "Skills", 2000]
+                  }
                   cursor={false}
                 />
               </Typography>
