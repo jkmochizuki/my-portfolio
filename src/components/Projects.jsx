@@ -26,8 +26,8 @@ export default function Projects() {
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.25,
+    triggerOnce: true,
+    threshold: isSmallScreen ? null : 0.25,
   });
 
   const ProjectSlides = () => {

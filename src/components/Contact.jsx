@@ -43,8 +43,8 @@ export default function Contact() {
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.5,
+    triggerOnce: true,
+    threshold: isSmallScreen ? null : 0.25,
   });
 
   useEffect(() => {

@@ -17,8 +17,8 @@ export default function Skills() {
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.25,
+    triggerOnce: true,
+    threshold: isSmallScreen ? 0.1 : 0.25,
   });
 
   return (
