@@ -1,43 +1,48 @@
 import React from "react";
-import { Box, Divider, Grid, Tooltip } from "@mui/material";
+import { Divider, Grid, Stack, Tooltip, Typography } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import DescriptionIcon from "@mui/icons-material/Description";
-import { leftMenuStyles } from "../theme/styles";
+import { rightSideLinksStyles } from "../theme/styles";
 
-export default function LeftMenu() {
+export default function RightSideLinks() {
   return (
-    <Grid container sx={leftMenuStyles.root}>
-      <Box sx={leftMenuStyles.section}>
-        <Tooltip title="LinkedIn" placement="right">
+    <Grid container sx={rightSideLinksStyles.root}>
+      <Stack direction="column" spacing={1}>
+        <Typography sx={rightSideLinksStyles.text}>
+          Stay&nbsp;Connected
+        </Typography>
+        <Divider
+          orientation="vertical"
+          color="#A0AEC0"
+          sx={rightSideLinksStyles.divider}
+        />
+        <Tooltip title="LinkedIn" placement="left">
           <LinkedInIcon
-            sx={leftMenuStyles.icon}
+            sx={rightSideLinksStyles.icon}
             onClick={() =>
               window.open("https://www.linkedin.com/in/jkmochizuki/", "_blank")
             }
           />
         </Tooltip>
-        <br />
-        <Tooltip title="GitHub" placement="right">
+        <Tooltip title="GitHub" placement="left">
           <GitHubIcon
-            sx={leftMenuStyles.icon}
+            sx={rightSideLinksStyles.icon}
             onClick={() =>
               window.open("https://github.com/jkmochizuki", "_blank")
             }
           />
         </Tooltip>
-        <br />
-        <Tooltip title="Email" placement="right">
+        <Tooltip title="Email" placement="left">
           <EmailIcon
-            sx={leftMenuStyles.icon}
+            sx={rightSideLinksStyles.icon}
             onClick={() => window.open("mailto:jkmochizuki@gmail.com")}
           />
         </Tooltip>
-        <br />
-        <Tooltip title="Resume" placement="right">
+        <Tooltip title="Resume" placement="left">
           <DescriptionIcon
-            sx={leftMenuStyles.icon}
+            sx={rightSideLinksStyles.icon}
             onClick={() =>
               window.open(
                 "https://resume.creddle.io/resume/3bkcgktacjr",
@@ -46,13 +51,7 @@ export default function LeftMenu() {
             }
           />
         </Tooltip>
-        <br />
-        <Divider
-          orientation="vertical"
-          color="#A0AEC0"
-          sx={leftMenuStyles.divider}
-        />
-      </Box>
+      </Stack>
     </Grid>
   );
 }
