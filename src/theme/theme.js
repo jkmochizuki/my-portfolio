@@ -82,4 +82,10 @@ export const theme = createTheme({
       },
     },
   },
+  appBar: {
+    zIndex: 1200,
+  },
+  drawer: {
+    zIndex: 1100,
+  },
 });

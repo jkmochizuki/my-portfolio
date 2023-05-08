@@ -12,6 +12,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import CloseIcon from "@mui/icons-material/Close";
 import { theme } from "../theme/theme";
 import { NavHashLink } from "react-router-hash-link";
@@ -23,8 +24,9 @@ import EmailIcon from "@mui/icons-material/Email";
 import DescriptionIcon from "@mui/icons-material/Description";
 
 export default function Navbar(props) {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [isHome, setIsHome] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   // const { isctive, ...rest } = props;
@@ -35,7 +37,11 @@ export default function Navbar(props) {
   // }
 
   const toggleDrawer = () => {
-    setOpen((prev) => !prev);
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsOpen((prev) => !prev);
+      setIsLoading(false);
+    }, 200);
   };
 
   useEffect(() => {
@@ -53,12 +59,12 @@ export default function Navbar(props) {
   }, []);
 
   const handleClink = () => {
-    setOpen(false);
+    setIsOpen(false);
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar sx={navbarStyles.root}>
+      <AppBar sx={navbarStyles.root} position="fixed">
         {/* navbar */}
         <Box sx={navbarStyles.navSection}>
           {isHome || isMediumScreen ? (
@@ -72,26 +78,24 @@ export default function Navbar(props) {
             <Box sx={navbarStyles.navItems} />
           )}
           <IconButton sx={navbarStyles.iconButton} onClick={toggleDrawer}>
-            <MenuIcon sx={navbarStyles.menuIcon} />
+            {!isLoading && !isOpen && <MenuIcon sx={navbarStyles.menuIcon} />}
+            {isLoading && <HorizontalRuleIcon sx={navbarStyles.menuIcon} />}
+            {!isLoading && isOpen && <CloseIcon sx={navbarStyles.menuIcon} />}
           </IconButton>
         </Box>
 
         {/* menu drawer */}
         <Drawer
           anchor="right"
-          open={open}
+          open={isOpen}
           onClose={toggleDrawer}
           PaperProps={{
             sx: navbarStyles.drawerPaperProps,
           }}
-          variant="persistent"
+          variant="modal"
+          transitionDuration={500}
         >
           <Box sx={navbarStyles.drawerContainer}>
-            {/* close button */}
-            <IconButton onClick={toggleDrawer} sx={navbarStyles.closeButton}>
-              <CloseIcon sx={navbarStyles.closeIcon} />
-            </IconButton>
-
             {/* menu options */}
             <Box sx={navbarStyles.menuSection}>
               {menuOptions.map((o) => (
@@ -123,7 +127,10 @@ export default function Navbar(props) {
                     <GitHubIcon
                       sx={navbarStyles.icon}
                       onClick={() =>
-                        window.open("https://github.com/julianamochizuki", "_blank")
+                        window.open(
+                          "https://github.com/julianamochizuki",
+                          "_blank"
+                        )
                       }
                     />
                     <EmailIcon

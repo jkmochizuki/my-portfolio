@@ -44,7 +44,7 @@ export const projects = [
     name: "Codi",
     image: "/images/codi-project.png",
     about:
-      "A coding-oriented flashcards app to help developers and students retain languages and frameworks concepts effectively.",
+      "A coding-oriented flashcards app that uses spaced repetition algorithm to help developers and students retain concepts effectively.",
     stack:
       "React, Axios, Node.js, Express.js, Prisma, PostgreSQL, Auth0, OpenAI API, Material UI.",
     live: "https://codi-app.netlify.app",
