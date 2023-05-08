@@ -231,7 +231,7 @@ export default function Contact() {
                         sx={contactStyles.icon}
                         onClick={() =>
                           window.open(
-                            "https://www.linkedin.com/in/jkmochizuki/",
+                            "https://www.linkedin.com/in/jmochizuki/",
                             "_blank"
                           )
                         }
@@ -240,7 +240,7 @@ export default function Contact() {
                         sx={contactStyles.icon}
                         onClick={() =>
                           window.open(
-                            "https://github.com/jkmochizuki",
+                            "https://github.com/julianamochizuki",
                             "_blank"
                           )
                         }

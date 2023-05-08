@@ -22,7 +22,7 @@ export default function RightSideLinks() {
           <LinkedInIcon
             sx={rightSideLinksStyles.icon}
             onClick={() =>
-              window.open("https://www.linkedin.com/in/jkmochizuki/", "_blank")
+              window.open("https://www.linkedin.com/in/jmochizuki/", "_blank")
             }
           />
         </Tooltip>
@@ -30,7 +30,7 @@ export default function RightSideLinks() {
           <GitHubIcon
             sx={rightSideLinksStyles.icon}
             onClick={() =>
-              window.open("https://github.com/jkmochizuki", "_blank")
+              window.open("https://github.com/julianamochizuki", "_blank")
             }
           />
         </Tooltip>

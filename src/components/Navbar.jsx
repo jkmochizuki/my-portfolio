@@ -115,7 +115,7 @@ export default function Navbar(props) {
                       sx={navbarStyles.icon}
                       onClick={() =>
                         window.open(
-                          "https://www.linkedin.com/in/jkmochizuki/",
+                          "https://www.linkedin.com/in/jmochizuki/",
                           "_blank"
                         )
                       }
@@ -123,7 +123,7 @@ export default function Navbar(props) {
                     <GitHubIcon
                       sx={navbarStyles.icon}
                       onClick={() =>
-                        window.open("https://github.com/jkmochizuki", "_blank")
+                        window.open("https://github.com/julianamochizuki", "_blank")
                       }
                     />
                     <EmailIcon

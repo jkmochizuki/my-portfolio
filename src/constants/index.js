@@ -57,7 +57,7 @@ export const projects = [
       "React scheduler application that allows users to book and cancel interviews.",
     stack: "React, Axios, Storybook, Cypress, Jest.",
     live: "https://interviewscheduler-app.netlify.app/",
-    repo: "https://github.com/jkmochizuki/scheduler",
+    repo: "https://github.com/julianamochizuki/scheduler",
   },
   {
     name: "TinyApp",
@@ -65,7 +65,7 @@ export const projects = [
     about: "Web application that allows users to shorten long URLs.",
     stack: "Node.js, Express.js, EJS",
     live: "https://tinyapp.herokuapp.com/",
-    repo: "https://github.com/jkmochizuki/tinyapp",
+    repo: "https://github.com/julianamochizuki/tinyapp",
   },
 
   {
@@ -74,6 +74,6 @@ export const projects = [
     about: "A simple, single-page Twitter clone.",
     stack: "Express.js, Node.js, jQuery, PostgreSQL.",
     live: "",
-    repo: "https://github.com/jkmochizuki/tweeter",
+    repo: "https://github.com/julianamochizuki/tweeter",
   },
 ];
