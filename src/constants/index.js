@@ -24,7 +24,7 @@ export const skills = [
   { name: "Bootstrap", class: "devicon-bootstrap-plain colored" },
   {
     name: "SQL",
-    src: "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_sql_icon_130152.png",
+    src: "https://img.icons8.com/?size=512&id=vAJD4bPPf091&format=png",
   },
   { name: "PostgreSQL", class: "devicon-postgresql-plain colored" },
   {

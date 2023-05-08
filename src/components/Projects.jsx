@@ -50,7 +50,7 @@ export default function Projects() {
                   className="cardMedia"
                 />
                 <Box className="overlay" sx={projectsStyles.cardBox}>
-                  <Typography variant="subtitle1">
+                  <Typography variant="body1" color="white">
                     {p.name !== "Tweeter" && (
                       <span>
                         <Link
@@ -74,9 +74,9 @@ export default function Projects() {
                     </Link>
                   </Typography>
                   <br />
-                  <Typography variant="subtitle2">{p.about}</Typography>
+                  <Typography variant="h6">{p.about}</Typography>
                   <br />
-                  <Typography variant="subtitle2">
+                  <Typography variant="h6">
                     Tech Stack: {p.stack}
                   </Typography>
                 </Box>

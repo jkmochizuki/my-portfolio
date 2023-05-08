@@ -22,6 +22,8 @@
   }
 }
 
+
+
 .card-box {
   position: relative;
   overflow: hidden;
@@ -62,6 +64,13 @@
 
 .swiper-button-prev, .swiper-button-next {
   color: #2af0ea; 
+  
+}
+
+@media (max-width:900px) {
+  .swiper-button-prev, .swiper-button-next {
+    width: 1rem;
+  }
 }
 
 .swiper-pagination-bullet-active, .swiper-pagination-bullet {

@@ -138,14 +138,7 @@ export default function Contact() {
             {/* form and email */}
             <Grid item container sx={contactStyles.container}>
               {/* form */}
-              <Grid
-                item
-                xs={12}
-                md={8}
-                container
-                component="form"
-                spacing={2}
-              >
+              <Grid item xs={12} md={8} container component="form" spacing={2}>
                 <Grid item xs={6}>
                   <TextField
                     label="Name"
@@ -210,44 +203,6 @@ export default function Contact() {
                 </Grid>
               </Grid>
 
-              {/* icons */}
-              <Hidden smUp>
-                <Grid item xs={12}>
-                  <Stack direction="row" spacing={1} sx={contactStyles.icons}>
-                    <LinkedInIcon
-                      sx={contactStyles.icon}
-                      onClick={() =>
-                        window.open(
-                          "https://www.linkedin.com/in/jkmochizuki/",
-                          "_blank"
-                        )
-                      }
-                    />
-                    <GitHubIcon
-                      sx={contactStyles.icon}
-                      onClick={() =>
-                        window.open("https://github.com/jkmochizuki", "_blank")
-                      }
-                    />
-                    <EmailIcon
-                      sx={contactStyles.icon}
-                      onClick={() =>
-                        window.open("mailto:jkmochizuki@gmail.com")
-                      }
-                    />
-                    <DescriptionIcon
-                      sx={contactStyles.icon}
-                      onClick={() =>
-                        window.open(
-                          "https://resume.creddle.io/resume/3bkcgktacjr",
-                          "_blank"
-                        )
-                      }
-                    />
-                  </Stack>
-                </Grid>
-              </Hidden>
-
               {/* email */}
               <Grid item xs={12} md={4} sx={contactStyles.infoContainer}>
                 <Hidden smDown>
@@ -268,6 +223,46 @@ export default function Contact() {
                   Email
                 </Typography>
                 <Typography variant="body1">jkmochizuki@gmail.com</Typography>
+                {/* icons */}
+                <Hidden smUp>
+                  <Grid item xs={12}>
+                    <Stack direction="row" spacing={1} sx={contactStyles.icons}>
+                      <LinkedInIcon
+                        sx={contactStyles.icon}
+                        onClick={() =>
+                          window.open(
+                            "https://www.linkedin.com/in/jkmochizuki/",
+                            "_blank"
+                          )
+                        }
+                      />
+                      <GitHubIcon
+                        sx={contactStyles.icon}
+                        onClick={() =>
+                          window.open(
+                            "https://github.com/jkmochizuki",
+                            "_blank"
+                          )
+                        }
+                      />
+                      <EmailIcon
+                        sx={contactStyles.icon}
+                        onClick={() =>
+                          window.open("mailto:jkmochizuki@gmail.com")
+                        }
+                      />
+                      <DescriptionIcon
+                        sx={contactStyles.icon}
+                        onClick={() =>
+                          window.open(
+                            "https://resume.creddle.io/resume/3bkcgktacjr",
+                            "_blank"
+                          )
+                        }
+                      />
+                    </Stack>
+                  </Grid>
+                </Hidden>
               </Grid>
             </Grid>
           </Grid>

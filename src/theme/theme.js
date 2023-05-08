@@ -13,7 +13,7 @@ export const theme = createTheme({
       // main: "#C97064",
       // main: "#FFC0CB",
       // main: "#f0a82a",
-      main: "#f06292"
+      main: "#f06292",
     },
     warning: {
       main: "#c8b900",
@@ -36,11 +36,12 @@ export const theme = createTheme({
       color: "#E2E8F0",
       fontWeight: "bold",
       "@media (max-width:900px)": {
-        fontSize: "1.7rem",
+        fontSize: "1.75rem",
       },
     },
     h3: {
-      color: "#E2E8F0",
+      color: "#A0AEC0",
+      fontWeight: "bold",
       "@media (max-width:900px)": {
         fontSize: "1.5rem",
       },
@@ -48,40 +49,21 @@ export const theme = createTheme({
     h4: {
       color: "#2af0ea",
       fontWeight: "bold",
+      fontSize: "2.2rem",
       "@media (max-width:900px)": {
-        fontSize: "1.2rem",
-      },
-    },
-    h5: {
-      color: "#E2E8F0",
-      "@media (max-width:900px)": {
-        fontSize: "1rem",
+        fontSize: "1.3rem",
       },
     },
     h6: {
-      color: "#2af0ea",
-      fontWeight: "bold",
-      fontSize: "1rem",
-      "@media (max-width:900px)": {
-        fontSize: "0.9rem",
-      },
-    },
-    subtitle1: {
-      color: "text.primary",
-      fontSize: "1.2rem",
+      color: "E2E8F0",
+      fontSize: "1.1rem",
       "@media (max-width:900px)": {
         fontSize: "0.7rem",
       },
     },
-    subtitle2: {
-      color: "white",
-      fontSize: "1.0rem",
-      "@media (max-width:900px)": {
-        fontSize: "0.5rem",
-      },
-    },
     body1: {
       color: "#A0AEC0",
+      fontSize: "1.1rem",
       "@media (max-width:900px)": {
         fontSize: "0.9rem",
       },
@@ -90,6 +72,13 @@ export const theme = createTheme({
       color: "#E2E8F0",
       "@media (max-width:900px)": {
         fontSize: "0.7rem",
+      },
+    },
+    body3: {
+      color: "E2E8F0",
+      fontSize: "1.0rem",
+      "@media (max-width:900px)": {
+        fontSize: "0.5rem",
       },
     },
   },
