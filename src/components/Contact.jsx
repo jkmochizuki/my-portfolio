@@ -222,7 +222,7 @@ export default function Contact() {
                 <Typography variant="body1" fontWeight="bold">
                   Email
                 </Typography>
-                <Typography variant="body1">jkmochizuki@gmail.com</Typography>
+                <Typography variant="body1">jmochizuki.dev@gmail.com</Typography>
                 {/* icons */}
                 <Hidden smUp>
                   <Grid item xs={12}>
@@ -248,7 +248,7 @@ export default function Contact() {
                       <EmailIcon
                         sx={contactStyles.icon}
                         onClick={() =>
-                          window.open("mailto:jkmochizuki@gmail.com")
+                          window.open("mailto:jmochizuki.dev@gmail.com")
                         }
                       />
                       <DescriptionIcon

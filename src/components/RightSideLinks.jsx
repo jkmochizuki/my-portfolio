@@ -37,7 +37,7 @@ export default function RightSideLinks() {
         <Tooltip title="Email" placement="left">
           <EmailIcon
             sx={rightSideLinksStyles.icon}
-            onClick={() => window.open("mailto:jkmochizuki@gmail.com")}
+            onClick={() => window.open("mailto:jmochizuki.dev@gmail.com")}
           />
         </Tooltip>
         <Tooltip title="Resume" placement="left">

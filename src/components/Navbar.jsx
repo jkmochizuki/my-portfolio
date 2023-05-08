@@ -129,7 +129,7 @@ export default function Navbar(props) {
                     <EmailIcon
                       sx={navbarStyles.icon}
                       onClick={() =>
-                        window.open("mailto:jkmochizuki@gmail.com")
+                        window.open("mailto:jmochizuki.dev@gmail.com")
                       }
                     />
                     <DescriptionIcon
