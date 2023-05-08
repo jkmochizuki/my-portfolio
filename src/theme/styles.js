@@ -111,6 +111,7 @@ export const homeStyles = {
     justifyContent: "center",
     alignItems: "flex-start",
     textAlign: "left",
+    marginTop: { xs: -1, md: 0 },
   },
   button: {
     borderColor: "primary.main",
@@ -172,7 +173,7 @@ export const navbarStyles = {
     // height: "7rem",
     boxShadow: "none",
     [theme.breakpoints.down("md")]: {
-      backgroundColor: "rgba(28, 30, 38, 0.97)",
+      backgroundColor: "rgba(28, 30, 38, 0.95)",
       height: "5rem",
     },
   },
@@ -239,8 +240,8 @@ export const navbarStyles = {
   },
   textOptions: {
     marginBottom: { xs: 0, md: 1 },
-    fontSize: { xs: "1rem", md: "1.5rem" },
-    fontWeight: "2px",
+    fontSize: { xs: "1.2rem", md: "1.5rem" },
+    fontWeight: { xs: "bold", md: 0 },
     color: { xs: "secondary.main", md: "text.primary" },
     textAlign: "flex-start",
     "&:hover": {
@@ -341,10 +342,10 @@ export const toggleStyles = {
   },
   icon: {
     color: "text.secondary",
-    fontSize: { xs: 30, md: 40 },
+    fontSize: 40,
     position: "fixed",
     transform: "rotate(180deg)",
-    margin: { xs: -3, md: -1 },
+    margin: { xs: -4, md: -1 },
     "&:hover": {
       color: "secondary.main",
     },
