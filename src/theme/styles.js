@@ -304,7 +304,7 @@ export const skillsStyles = {
   root: {
     px: { xs: 4, sm: 10, md: 18 },
     height: { xs: "auto", md: "100vh" },
-    marginTop: { xs: "5rem", md: -5 },
+    marginTop: { xs: "5rem", md: 0 },
   },
   paper: {
     bgcolor: "background.light",

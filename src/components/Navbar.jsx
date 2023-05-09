@@ -64,6 +64,10 @@ export default function Navbar(props) {
   }, []);
 
   const handleClink = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 200);
     setIsOpen(false);
   };
 
