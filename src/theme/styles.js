@@ -265,7 +265,7 @@ export const projectsStyles = {
     marginTop: { xs: "5rem", md: -5 },
   },
   card: {
-    maxWidth: 550,
+    maxWidth: 600,
     mx: "auto",
     marginBottom: 5,
     borderRadius: 5,
@@ -304,15 +304,15 @@ export const skillsStyles = {
   root: {
     px: { xs: 4, sm: 10, md: 18 },
     height: { xs: "auto", md: "100vh" },
-    marginTop: { xs: "5rem", md: 0 },
+    marginTop: { xs: "5rem", md: -5 },
   },
   paper: {
     bgcolor: "background.light",
     // border: "1px solid ",
     // borderColor: "primary.main",
     borderRadius: 5,
-    py: 10,
-    m: 5,
+    py: { xs: 3, sm: 5, md: 10 },
+    m: { xs: 0, md: 5 },
     // [theme.breakpoints.up("md")]: {
     //   boxShadow: "15px 15px 0px 0px #1c1e26, 15px 15px 0px 0.5px #2af0ea",
     // },
