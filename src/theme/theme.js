@@ -26,7 +26,8 @@ export const theme = createTheme({
       secondary: "#A0AEC0",
     },
     background: {
-      default: "#1c1e26",
+      default: "#171a26",
+      light: "#1a1e2e"
     },
   },
 
@@ -81,11 +82,5 @@ export const theme = createTheme({
         fontSize: "0.5rem",
       },
     },
-  },
-  appBar: {
-    zIndex: 1200,
-  },
-  drawer: {
-    zIndex: 1100,
   },
 });

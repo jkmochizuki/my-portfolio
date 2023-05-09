@@ -4,7 +4,6 @@ import {
   Grid,
   ThemeProvider,
   Typography,
-  useMediaQuery,
 } from "@mui/material";
 import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
@@ -12,18 +11,16 @@ import { useInView } from "react-intersection-observer";
 import { aboutStyles } from "../theme/styles";
 
 export default function About() {
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: isSmallScreen ? null : 0.25,
+    threshold: 0.25,
   });
 
   return (
     <Grid
       container
       sx={aboutStyles.root}
-      className={!isSmallScreen && inView ? "section" : "opacity-0"}
+      className={inView ? "section" : "opacity-0"}
       ref={ref}
       id="about"
     >
@@ -32,19 +29,13 @@ export default function About() {
           <Grid
             container
             sx={aboutStyles.container}
-            className={`container ${
-              !isSmallScreen && inView ? "slide-in" : ""
-            }`}
+            className={`container ${inView ? "slide-in" : ""}`}
           >
             {/* title */}
             <Grid item xs={12} sx={aboutStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={
-                    isSmallScreen
-                      ? ["About me", 2000]
-                      : ["", 2000, "About me", 2000]
-                  }
+                  sequence={["", 1000, "About me", 2000]}
                   cursor={false}
                 />
               </Typography>

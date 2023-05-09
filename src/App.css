@@ -4,16 +4,25 @@
 
 .section {
   opacity: 1;
-  transition: opacity 2s;
+  transition: opacity 2s, transform 2s;
 }
 
 .container.slide-in {
-  animation: slide-in 2s;
+  animation: slide-in 1.8s;
+}
+
+
+.container.slide-in-home  {
+  animation: slide-in-home 1.8s;
+}
+
+.container.slide-in-nav  {
+  animation: slide-in-nav 1.8s;
 }
 
 @keyframes slide-in {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-15%);
     opacity: 0;
   }
   100% {
@@ -22,6 +31,27 @@
   }
 }
 
+@keyframes slide-in-home {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-nav {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 
 .card-box {

@@ -8,7 +8,6 @@ import {
   Box,
   Link,
   ThemeProvider,
-  useMediaQuery,
 } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper";
@@ -23,11 +22,9 @@ import "../App.css";
 import { projectsStyles } from "../theme/styles";
 
 export default function Projects() {
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: isSmallScreen ? null : 0.25,
+    threshold: 0.25,
   });
 
   const ProjectSlides = () => {
@@ -76,9 +73,7 @@ export default function Projects() {
                   <br />
                   <Typography variant="h6">{p.about}</Typography>
                   <br />
-                  <Typography variant="h6">
-                    Tech Stack: {p.stack}
-                  </Typography>
+                  <Typography variant="h6">Tech Stack: {p.stack}</Typography>
                 </Box>
               </Box>
             </Card>
@@ -92,7 +87,7 @@ export default function Projects() {
     <Grid
       container
       sx={projectsStyles.root}
-      className={!isSmallScreen && inView ? "section" : "opacity-0"}
+      className={inView ? "section" : "opacity-0"}
       ref={ref}
       id="projects"
     >
@@ -101,19 +96,13 @@ export default function Projects() {
           <Grid
             container
             sx={projectsStyles.container}
-            className={`container ${
-              !isSmallScreen && inView ? "slide-in" : ""
-            }`}
+            className={`container ${inView ? "slide-in" : ""}`}
           >
             {/* title */}
             <Grid item xs={12} sx={projectsStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={
-                    isSmallScreen
-                      ? ["Projects", 2000]
-                      : ["", 2000, "Projects", 2000]
-                  }
+                  sequence={["", 1000, "Projects", 2000]}
                   cursor={false}
                 />
               </Typography>

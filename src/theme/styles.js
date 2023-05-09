@@ -111,7 +111,7 @@ export const homeStyles = {
     justifyContent: "center",
     alignItems: "flex-start",
     textAlign: "left",
-    marginTop: { xs: -1, md: 0 },
+    marginTop: { xs: -2, md: 0 },
   },
   button: {
     borderColor: "primary.main",
@@ -174,7 +174,7 @@ export const navbarStyles = {
     boxShadow: "none",
     zIndex: theme.zIndex.drawer + 1,
     [theme.breakpoints.down("md")]: {
-      backgroundColor: "rgba(28, 30, 38, 0.93)",
+      backgroundColor: "rgba(23, 26, 38, 0.95)",
       height: "5rem",
     },
   },
@@ -201,8 +201,7 @@ export const navbarStyles = {
     height: { xs: "100%", md: 500 },
     width: { xs: "100vw", md: 500 },
     borderBottomLeftRadius: { xs: 0, md: "100%" },
-    // mt: { xs: 0, md: -8 },
-    // disableScrollLock: true,
+    // disableScrollLock: false,
     border: "none",
   },
   drawerContainer: {
@@ -221,8 +220,8 @@ export const navbarStyles = {
     flexDirection: "column",
     alignItems: { xs: "center", md: "flex-start" },
     justifyContent: "space-between",
-    height: { xs: "70vh", md: "auto" },
-    marginTop: { xs: "8rem", md: 0 },
+    height: { xs: "60vh", md: "auto" },
+    marginTop: { xs: "20vh", md: 0 },
   },
   hashLink: {
     textDecoration: "none",
@@ -275,7 +274,7 @@ export const projectsStyles = {
     },
   },
   cardHeader: {
-    bgcolor: "#232733",
+    bgcolor: "#1a1e2e",
     "& .MuiCardHeader-title": {
       [theme.breakpoints.down("sm")]: {
         maxHeight: 10,
@@ -303,16 +302,28 @@ export const projectsStyles = {
 
 export const skillsStyles = {
   root: {
-    padding: { xs: 4, sm: 10, md: 18 },
+    px: { xs: 4, sm: 10, md: 18 },
     height: { xs: "auto", md: "100vh" },
+    marginTop: { xs: "5rem", md: 0 },
+  },
+  paper: {
+    bgcolor: "background.light",
+    // border: "1px solid ",
+    // borderColor: "primary.main",
+    borderRadius: 5,
+    py: 10,
+    m: 5,
+    // [theme.breakpoints.up("md")]: {
+    //   boxShadow: "15px 15px 0px 0px #1c1e26, 15px 15px 0px 0.5px #2af0ea",
+    // },
   },
   container: {
     justifyContent: "center",
+    alignContent: "center",
     rowGap: { xs: theme.spacing(2), md: theme.spacing(3) },
-    marginTop: { xs: "5rem", md: -3 },
   },
   title: {
-    marginBottom: { xs: -5, md: 10 },
+    marginBottom: { xs: 5, md: 5 },
   },
   iconImage: {
     height: { xs: 35, md: 60 },

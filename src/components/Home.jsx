@@ -3,12 +3,31 @@ import { Typography, Grid, ThemeProvider, Button, Stack } from "@mui/material";
 import { theme } from "../theme/theme";
 import { HashLink } from "react-router-hash-link";
 import { homeStyles } from "../theme/styles";
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.25,
+  });
+
   return (
     <ThemeProvider theme={theme}>
-      <Grid container item xs={12} sx={homeStyles.root} id="home">
-        <Grid item xs={12} sx={homeStyles.section}>
+      <Grid
+        container
+        item
+        xs={12}
+        sx={homeStyles.root}
+        className={inView ? "section" : "opacity-0"}
+        ref={ref}
+        id="home"
+      >
+        <Grid
+          item
+          xs={12}
+          sx={homeStyles.section}
+          className={`container ${inView ? "slide-in-home" : ""}`}
+        >
           <Typography variant="body1" color="primary.main">
             Hello! My name is
           </Typography>
@@ -18,7 +37,8 @@ export default function Home() {
           <br />
           <br />
           <Typography xs={3} variant="body1">
-          Analytical thinker with a background in Chemical Engineering and Accounting, turned Full Stack Web Developer.
+            Analytical thinker with a background in Chemical Engineering and
+            Accounting, turned Full Stack Web Developer.
           </Typography>
           <br />
           <br />

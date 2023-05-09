@@ -5,11 +5,25 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import DescriptionIcon from "@mui/icons-material/Description";
 import { rightSideLinksStyles } from "../theme/styles";
+import { useInView } from "react-intersection-observer";
 
 export default function RightSideLinks() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
   return (
-    <Grid container sx={rightSideLinksStyles.root}>
-      <Stack direction="column" spacing={1}>
+    <Grid
+      container
+      sx={rightSideLinksStyles.root}
+      className={inView ? "section" : "opacity-0"}
+      ref={ref}
+    >
+      <Stack
+        direction="column"
+        spacing={1}
+        className={`container ${inView ? "slide-in-home" : ""}`}
+      >
         <Typography sx={rightSideLinksStyles.text}>
           Stay&nbsp;Connected
         </Typography>

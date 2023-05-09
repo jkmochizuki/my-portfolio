@@ -10,7 +10,6 @@ import {
   TextField,
   ThemeProvider,
   Typography,
-  useMediaQuery,
 } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -40,11 +39,9 @@ export default function Contact() {
     message: false,
   });
 
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: isSmallScreen ? null : 0.25,
+    threshold: 0.25,
   });
 
   useEffect(() => {
@@ -109,27 +106,18 @@ export default function Contact() {
     <Grid
       container
       sx={contactStyles.root}
-      className={!isSmallScreen && inView ? "section" : "opacity-0"}
+      className={inView ? "section" : "opacity-0"}
       ref={ref}
       id="contact"
     >
       {inView ? (
         <ThemeProvider theme={theme}>
-          <Grid
-            container
-            className={`container ${
-              !isSmallScreen && inView ? "slide-in" : ""
-            }`}
-          >
+          <Grid container className={`container ${inView ? "slide-in" : ""}`}>
             {/* title */}
             <Grid item xs={12} sx={contactStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={
-                    isSmallScreen
-                      ? ["Get in touch", 2000]
-                      : ["", 2000, "Get in touch", 2000]
-                  }
+                  sequence={["", 1000, "Get in touch", 2000]}
                   cursor={false}
                 />
               </Typography>
@@ -222,7 +210,9 @@ export default function Contact() {
                 <Typography variant="body1" fontWeight="bold">
                   Email
                 </Typography>
-                <Typography variant="body1">jmochizuki.dev@gmail.com</Typography>
+                <Typography variant="body1">
+                  jmochizuki.dev@gmail.com
+                </Typography>
                 {/* icons */}
                 <Hidden smUp>
                   <Grid item xs={12}>
