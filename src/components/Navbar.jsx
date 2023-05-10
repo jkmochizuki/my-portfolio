@@ -26,26 +26,24 @@ import { useInView } from "react-intersection-observer";
 export default function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrollUp, setIsScrollUp] = useState(true);
-  const prevScrollPos = useRef(0);
   const [isLoading, setIsLoading] = useState(false);
+  const prevScrollPos = useRef(0);
 
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.25,
   });
 
-  const toggleDrawer = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsOpen((prev) => !prev);
-      setIsLoading(false);
-    }, 200);
-  };
+  // useEffect(() => {
+  //   isOpen
+  //     ? document.body.classList.add('hide-scroll')
+  //     : document.body.classList.remove('hide-scroll');
+  // }, [isOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      if (prevScrollPos.current > currentScrollPos) {
+      if (prevScrollPos.current > currentScrollPos || window.pageYOffset < 50) {
         setIsScrollUp(true);
       } else {
         setIsScrollUp(false);
@@ -58,6 +56,14 @@ export default function Navbar(props) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const toggleDrawer = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsOpen((prev) => !prev);
+      setIsLoading(false);
+    }, 200);
+  };
 
   const handleClink = () => {
     setIsLoading(true);
@@ -110,9 +116,7 @@ export default function Navbar(props) {
             anchor="right"
             open={isOpen}
             onClose={toggleDrawer}
-            PaperProps={{
-              sx: navbarStyles.drawerPaperProps,
-            }}
+            PaperProps={{ sx: navbarStyles.drawerPaperProps }}
             variant="temporary"
             transitionDuration={500}
           >

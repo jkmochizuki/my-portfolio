@@ -92,6 +92,39 @@
   transition: height 0.5s, bottom 0.5s;
 }
 
+
+/* #skills {
+  background-image: url(images/skills.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+} */
+
+/* #contact {
+  background-color: #1a1e2e;
+} */
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #171a26;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(160, 174, 192, 0.5)
+  ;
+  border-radius: 5px;
+  border: 2px solid;
+  ;
+}
+
+/* .hide-scroll {
+  overflow: hidden;
+} */
+
+
 .swiper-button-prev, .swiper-button-next {
   color: #2af0ea; 
   
@@ -106,13 +139,3 @@
 .swiper-pagination-bullet-active, .swiper-pagination-bullet {
   background-color: #2af0ea;
 }
-
-/* #skills {
-  background-image: url(images/skills.jpg);
-  background-position: center top;
-  background-repeat: no-repeat;
-} */
-
-/* #contact {
-  background-color: #1a1e2e;
-} */
