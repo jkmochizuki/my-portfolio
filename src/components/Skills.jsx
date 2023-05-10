@@ -6,6 +6,7 @@ import {
   Paper,
   ThemeProvider,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import { skills } from "../constants";
 import { theme } from "../theme/theme";
@@ -14,9 +15,11 @@ import { useInView } from "react-intersection-observer";
 import { skillsStyles } from "../theme/styles";
 
 export default function Skills() {
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: isSmallScreen ? 0.5 : 0.25,
   });
 
   return (

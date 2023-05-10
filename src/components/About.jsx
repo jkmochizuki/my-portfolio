@@ -4,16 +4,18 @@ import {
   Grid,
   ThemeProvider,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import { theme } from "../theme/theme";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
-import { aboutStyles } from "../theme/styles";
+import { aboutStyles } from "../theme/styles"; 
 
 export default function About() {
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: isSmallScreen ? 1 : 0.25,
   });
 
   return (

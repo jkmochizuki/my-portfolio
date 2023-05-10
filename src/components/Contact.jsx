@@ -10,6 +10,7 @@ import {
   TextField,
   ThemeProvider,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -38,10 +39,11 @@ export default function Contact() {
     email: false,
     message: false,
   });
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: isSmallScreen ? 0.5 : 0.25,
   });
 
   useEffect(() => {

@@ -8,6 +8,7 @@ import {
   Box,
   Link,
   ThemeProvider,
+  useMediaQuery,
 } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper";
@@ -22,9 +23,11 @@ import "../App.css";
 import { projectsStyles } from "../theme/styles";
 
 export default function Projects() {
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: isSmallScreen ? 0.5 : 0.25,
   });
 
   const ProjectSlides = () => {
