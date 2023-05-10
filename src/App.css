@@ -17,7 +17,7 @@
 }
 
 .container.slide-in-nav  {
-  animation: slide-in-nav 1.8s;
+  animation: slide-in-nav 1s;
 }
 
 @keyframes slide-in {
@@ -106,3 +106,13 @@
 .swiper-pagination-bullet-active, .swiper-pagination-bullet {
   background-color: #2af0ea;
 }
+
+/* #skills {
+  background-image: url(images/skills.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+} */
+
+/* #contact {
+  background-color: #1a1e2e;
+} */
