@@ -309,6 +309,9 @@ export const projectsStyles = {
     display: 'flex',
     alignItems: 'center',
     transition: 'color 0.3s ease',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '0.6rem',
+    },
     '&:hover': {
       color: 'background.default',
     },
