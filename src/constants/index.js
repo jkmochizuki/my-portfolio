@@ -46,7 +46,7 @@ export const projects = [
     about:
       'Amazin is a web application aimed at replicating the core functionalities and features of the e-commerce platform, Amazon.',
     stack:
-      'Axios, Node.js, Express.js, Prisma, PostgreSQL, React, Redux, Bootstrap, Stripe.js',
+      'Axios, Node.js, Express.js, Prisma, PostgreSQL, React, Redux, Bootstrap, Stripe.js, CryptoJS, Bcrypt.',
     live: 'https://amazin-app.netlify.app/',
     repo: 'https://github.com/julianamochizuki/amazin',
   },
@@ -65,7 +65,7 @@ export const projects = [
     image: '/images/scheduler-project.png',
     about:
       'React scheduler application that allows users to book and cancel interviews.',
-    stack: 'React, Axios, Storybook, Cypress, Jest.',
+    stack: 'Axios, React, Storybook, Cypress, Jest.',
     live: 'https://interviewscheduler-app.netlify.app/',
     repo: 'https://github.com/julianamochizuki/scheduler',
   },
@@ -77,12 +77,11 @@ export const projects = [
     live: 'https://tinyapp.herokuapp.com/',
     repo: 'https://github.com/julianamochizuki/tinyapp',
   },
-
   {
     name: 'Tweeter',
     image: '/images/tweeter-project.png',
     about: 'A simple, single-page Twitter clone.',
-    stack: 'Express.js, Node.js, jQuery, PostgreSQL.',
+    stack: 'Node.js, Express.js, PostgreSQL, jQuery.',
     live: '',
     repo: 'https://github.com/julianamochizuki/tweeter',
   },

@@ -6,14 +6,14 @@ export const theme = createTheme({
       main: "#2af0ea",
     },
     secondary: {
-      // main: "#734B5E"
+      main: "#EA2A8A"
       // main: "#993955"
       // main: "#6A5B6E",
       // main: "#FF7477",
       // main: "#C97064",
       // main: "#FFC0CB",
       // main: "#f0a82a",
-      main: "#f06292",
+      // main: "#f06292",
     },
     warning: {
       main: "#c8b900",

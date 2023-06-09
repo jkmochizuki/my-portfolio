@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import {
   AppBar,
   Box,
@@ -9,19 +9,19 @@ import {
   Stack,
   ThemeProvider,
   Typography,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import CloseIcon from "@mui/icons-material/Close";
-import { theme } from "../theme/theme";
-import { NavHashLink } from "react-router-hash-link";
-import { menuOptions } from "../constants";
-import { navbarStyles } from "../theme/styles";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import EmailIcon from "@mui/icons-material/Email";
-import DescriptionIcon from "@mui/icons-material/Description";
-import { useInView } from "react-intersection-observer";
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import CloseIcon from '@mui/icons-material/Close';
+import { theme } from '../theme/theme';
+import { NavHashLink } from 'react-router-hash-link';
+import { menuOptions } from '../constants';
+import { navbarStyles } from '../theme/styles';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
+import DescriptionIcon from '@mui/icons-material/Description';
+import { useInView } from 'react-intersection-observer';
 
 export default function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,9 +51,9 @@ export default function Navbar(props) {
       prevScrollPos.current = currentScrollPos;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -80,7 +80,7 @@ export default function Navbar(props) {
           sx={{
             ...navbarStyles.root,
             backgroundColor:
-              isOpen || isLoading ? "transparent" : "rgba(23, 26, 38, 0.9)",
+              isOpen || isLoading ? 'transparent' : 'rgba(23, 26, 38, 0.9)',
           }}
           position="fixed"
           ref={ref}
@@ -88,12 +88,12 @@ export default function Navbar(props) {
           {/* navbar */}
           <Box
             sx={navbarStyles.navSection}
-            className={`container ${inView ? "slide-in-nav" : ""}`}
+            className={`container ${inView ? 'slide-in-nav' : ''}`}
           >
             {!isOpen ? (
               <Box
                 component="img"
-                src={process.env.PUBLIC_URL + "/images/logo.png"}
+                src={process.env.PUBLIC_URL + '/images/logo.png'}
                 alt=""
                 sx={navbarStyles.navItems}
               />
@@ -144,8 +144,8 @@ export default function Navbar(props) {
                         sx={navbarStyles.icon}
                         onClick={() =>
                           window.open(
-                            "https://www.linkedin.com/in/jmochizuki/",
-                            "_blank"
+                            'https://www.linkedin.com/in/jmochizuki/',
+                            '_blank'
                           )
                         }
                       />
@@ -153,23 +153,23 @@ export default function Navbar(props) {
                         sx={navbarStyles.icon}
                         onClick={() =>
                           window.open(
-                            "https://github.com/julianamochizuki",
-                            "_blank"
+                            'https://github.com/julianamochizuki',
+                            '_blank'
                           )
                         }
                       />
                       <EmailIcon
                         sx={navbarStyles.icon}
                         onClick={() =>
-                          window.open("mailto:jmochizuki.dev@gmail.com")
+                          window.open('mailto:jmochizuki.dev@gmail.com')
                         }
                       />
                       <DescriptionIcon
                         sx={navbarStyles.icon}
                         onClick={() =>
                           window.open(
-                            "https://resume.creddle.io/resume/3bkcgktacjr",
-                            "_blank"
+                            'https://resume.creddle.io/resume/3bkcgktacjr',
+                            '_blank'
                           )
                         }
                       />

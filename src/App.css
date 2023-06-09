@@ -60,7 +60,7 @@
 }
 
 .card-box .cardMedia {
-  transition: transform 0.8s;
+  transition: transform 0.7s;
 }
 
 .card-box:hover .cardMedia {
@@ -71,14 +71,14 @@
   height: 0;
   position: absolute;
   bottom: 0;
-  background-color:  rgba(240, 98, 146, 0.95); 
+  background-color:  rgba(248, 115, 171, 0.95); 
   color: "text.primary";
   left: 0;
   right: 0;
   z-index: 9999;
   padding: 20px;
   box-sizing: border-box;
-  transition: height 0.5s, bottom 0.5s;
+  transition: height 0.7s, bottom 0.7s;
 }
 
 .card-box:hover .overlay {
@@ -89,9 +89,8 @@
 .card-box:not(:hover) .overlay {
   height: 0;
   bottom: -100%;
-  transition: height 0.5s, bottom 0.5s;
+  transition: height 0.7s, bottom 0.7s;
 }
-
 
 /* #skills {
   background-image: url(images/skills.jpg);

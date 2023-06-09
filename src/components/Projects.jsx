@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Grid,
   Card,
@@ -9,21 +9,22 @@ import {
   Link,
   ThemeProvider,
   useMediaQuery,
-} from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper";
-import { projects } from "../constants";
-import { theme } from "../theme/theme";
-import { TypeAnimation } from "react-type-animation";
-import { useInView } from "react-intersection-observer";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "../App.css";
-import { projectsStyles } from "../theme/styles";
+} from '@mui/material';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, A11y } from 'swiper';
+import { projects } from '../constants';
+import { theme } from '../theme/theme';
+import { TypeAnimation } from 'react-type-animation';
+import { useInView } from 'react-intersection-observer';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import '../App.css';
+import { projectsStyles } from '../theme/styles';
+import { GitHub, Language } from '@mui/icons-material';
 
 export default function Projects() {
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -50,29 +51,36 @@ export default function Projects() {
                   className="cardMedia"
                 />
                 <Box className="overlay" sx={projectsStyles.cardBox}>
-                  <Typography variant="body1" color="white">
-                    {p.name !== "Tweeter" && (
+                  <Typography
+                    variant="body1"
+                    color="white"
+                    sx={projectsStyles.linksContainer}
+                  >
+                    {p.name !== 'Tweeter' && (
                       <span>
                         <Link
                           color="inherit"
                           underline="hover"
                           sx={projectsStyles.link}
-                          onClick={() => window.open(p.live, "_blank")}
+                          onClick={() => window.open(p.live, '_blank')}
                         >
-                          Live
+                          <Language />
+                          &nbsp;Live
                         </Link>
-                        {" | "}
                       </span>
                     )}
+                    {p.name !== 'Tweeter' && <>&nbsp;|&nbsp;</>}
                     <Link
                       color="inherit"
                       underline="hover"
                       sx={projectsStyles.link}
-                      onClick={() => window.open(p.repo, "_blank")}
+                      onClick={() => window.open(p.repo, '_blank')}
                     >
-                      Repo
+                      <GitHub />
+                      &nbsp;Repo
                     </Link>
                   </Typography>
+
                   <br />
                   <Typography variant="h6">{p.about}</Typography>
                   <br />
@@ -90,7 +98,7 @@ export default function Projects() {
     <Grid
       container
       sx={projectsStyles.root}
-      className={inView ? "section" : "opacity-0"}
+      className={inView ? 'section' : 'opacity-0'}
       ref={ref}
       id="projects"
     >
@@ -99,13 +107,13 @@ export default function Projects() {
           <Grid
             container
             sx={projectsStyles.container}
-            className={`container ${inView ? "slide-in" : ""}`}
+            className={`container ${inView ? 'slide-in' : ''}`}
           >
             {/* title */}
             <Grid item xs={12} sx={projectsStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 1000, "Projects", 2000]}
+                  sequence={['', 1000, 'Projects', 2000]}
                   cursor={false}
                 />
               </Typography>
