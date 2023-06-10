@@ -33,12 +33,12 @@ export default function Home() {
           </Typography>
           <br />
           <Typography variant="h2">Juliana Mochizuki</Typography>
-          <Typography variant="h3">I am a Full Stack Web Developer</Typography>
+          <Typography variant="h3">I am a Full Stack Developer</Typography>
           <br />
           <br />
           <Typography xs={3} variant="body1">
-            Analytical thinker with a background in Chemical Engineering and
-            Accounting, turned Full Stack Web Developer.
+            Analytical thinker with a background in chemical engineering and
+            accounting turned Full Stack Developer.
           </Typography>
           <br />
           <br />

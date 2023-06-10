@@ -48,8 +48,8 @@ export default function About() {
               {/* text */}
               <Grid item xs={12} md={8}>
                 <Typography variant="body1" sx={aboutStyles.body}>
-                  Hello! My name is Juliana. As a web developer, I am
-                  comfortable working on both the frontend and backend. I have a
+                  Hello! My name is Juliana. As a full stack developer, I am
+                  comfortable working on both frontend and backend. I have a
                   strong desire to continuously learn and explore new
                   technologies, and I am always enthusiastic about embracing
                   fresh challenges. I approach my work with great motivation and

@@ -195,6 +195,7 @@ export const navbarStyles = {
   menuIcon: {
     fontSize: { xs: 25, md: 40 },
     transition: 'opacity 2s ease',
+    color: 'background.default'
   },
   drawerPaperProps: {
     height: { xs: '100%', md: 500 },
