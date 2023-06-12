@@ -56,7 +56,7 @@ export default function Projects() {
                     color="white"
                     sx={projectsStyles.linksContainer}
                   >
-                    {p.name !== 'Tweeter' && (
+                    {(p.name !== 'Tweeter' && p.name !== 'Codi') && (
                       <span>
                         <Link
                           color="inherit"
@@ -69,7 +69,7 @@ export default function Projects() {
                         </Link>
                       </span>
                     )}
-                    {p.name !== 'Tweeter' && <>&nbsp;|&nbsp;</>}
+                    {(p.name !== 'Tweeter' && p.name !== 'Codi')  && <>&nbsp;|&nbsp;</>}
                     <Link
                       color="inherit"
                       underline="hover"
