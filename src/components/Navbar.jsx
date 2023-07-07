@@ -80,7 +80,7 @@ export default function Navbar(props) {
           sx={{
             ...navbarStyles.root,
             backgroundColor:
-              isOpen || isLoading ? 'transparent' : 'rgba(23, 26, 38, 0.9)',
+              isOpen || isLoading ? 'transparent' : 'rgba(7, 20, 38, 0.9)',
           }}
           position="fixed"
           ref={ref}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   Alert,
   Box,
@@ -11,35 +11,35 @@ import {
   ThemeProvider,
   Typography,
   useMediaQuery,
-} from "@mui/material";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import EmailIcon from "@mui/icons-material/Email";
-import DescriptionIcon from "@mui/icons-material/Description";
-import emailjs from "@emailjs/browser";
-import { theme } from "../theme/theme";
-import { TypeAnimation } from "react-type-animation";
-import { useInView } from "react-intersection-observer";
-import { contactStyles } from "../theme/styles";
+} from '@mui/material';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
+import DescriptionIcon from '@mui/icons-material/Description';
+import emailjs from '@emailjs/browser';
+import { theme } from '../theme/theme';
+import { TypeAnimation } from 'react-type-animation';
+import { useInView } from 'react-intersection-observer';
+import { contactStyles } from '../theme/styles';
 
 export default function Contact() {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
   const [errorMessage, setErrorMessage] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
   const [error, setError] = useState({
     name: false,
     email: false,
     message: false,
   });
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -47,11 +47,11 @@ export default function Contact() {
   });
 
   useEffect(() => {
-    const fields = ["name", "email", "message"];
+    const fields = ['name', 'email', 'message'];
 
     fields.forEach((field) => {
       if (form[field].length > 0 && errorMessage[field]) {
-        setErrorMessage((prev) => ({ ...prev, [field]: "" }));
+        setErrorMessage((prev) => ({ ...prev, [field]: '' }));
         setError((prev) => ({ ...prev, [field]: false }));
       }
     });
@@ -60,7 +60,7 @@ export default function Contact() {
   const handleClick = (e) => {
     e.preventDefault();
 
-    const fields = ["name", "email", "message"];
+    const fields = ['name', 'email', 'message'];
 
     fields.forEach((field) => {
       if (!form[field]) {
@@ -81,24 +81,24 @@ export default function Contact() {
             from_name: form.name,
             from_email: form.email,
             message: form.message,
-            to_name: "Juliana",
+            to_name: 'Juliana',
           },
           process.env.REACT_APP_EMAILJS_PUBLIC_KEY
         )
         .then(
           () => {
             setMessage(
-              "Thank you for your message! I will get back to you as soon as possible."
+              'Thank you for your message! I will get back to you as soon as possible.'
             );
             setForm({
-              name: "",
-              email: "",
-              message: "",
+              name: '',
+              email: '',
+              message: '',
             });
           },
           (e) => {
             console.log(e);
-            alert("Please try again.");
+            alert('Please try again.');
           }
         );
     }
@@ -108,18 +108,18 @@ export default function Contact() {
     <Grid
       container
       sx={contactStyles.root}
-      className={inView ? "section" : "opacity-0"}
+      className={inView ? 'section' : 'opacity-0'}
       ref={ref}
       id="contact"
     >
       {inView ? (
         <ThemeProvider theme={theme}>
-          <Grid container className={`container ${inView ? "slide-in" : ""}`}>
+          <Grid container className={`container ${inView ? 'slide-in' : ''}`}>
             {/* title */}
             <Grid item xs={12} sx={contactStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 1000, "Get in touch", 2000]}
+                  sequence={['', 1000, 'Get in touch', 2000]}
                   cursor={false}
                 />
               </Typography>
@@ -183,7 +183,7 @@ export default function Contact() {
                   />
                   <Grid item xs={1} mt={5}>
                     <Button
-                      variant="contained"
+                      variant="outlined"
                       sx={contactStyles.sendButton}
                       onClick={handleClick}
                     >
@@ -198,7 +198,7 @@ export default function Contact() {
                 <Hidden smDown>
                   <Box
                     component="img"
-                    src={process.env.PUBLIC_URL + "/images/logo.png"}
+                    src={process.env.PUBLIC_URL + '/images/logo.png'}
                     alt=""
                     sx={contactStyles.logo}
                   />
@@ -223,8 +223,8 @@ export default function Contact() {
                         sx={contactStyles.icon}
                         onClick={() =>
                           window.open(
-                            "https://www.linkedin.com/in/jmochizuki/",
-                            "_blank"
+                            'https://www.linkedin.com/in/jmochizuki/',
+                            '_blank'
                           )
                         }
                       />
@@ -232,23 +232,23 @@ export default function Contact() {
                         sx={contactStyles.icon}
                         onClick={() =>
                           window.open(
-                            "https://github.com/julianamochizuki",
-                            "_blank"
+                            'https://github.com/julianamochizuki',
+                            '_blank'
                           )
                         }
                       />
                       <EmailIcon
                         sx={contactStyles.icon}
                         onClick={() =>
-                          window.open("mailto:jmochizuki.dev@gmail.com")
+                          window.open('mailto:jmochizuki.dev@gmail.com')
                         }
                       />
                       <DescriptionIcon
                         sx={contactStyles.icon}
                         onClick={() =>
                           window.open(
-                            "https://resume.creddle.io/resume/3bkcgktacjr",
-                            "_blank"
+                            'https://resume.creddle.io/resume/3bkcgktacjr',
+                            '_blank'
                           )
                         }
                       />
@@ -263,17 +263,20 @@ export default function Contact() {
           <Snackbar
             open={message.length > 0}
             autoHideDuration={6000}
-            onClose={() => setMessage("")}
+            onClose={() => setMessage('')}
             anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
+              vertical: 'bottom',
+              horizontal: 'right',
             }}
           >
             <Alert
               elevation={6}
               variant="filled"
-              onClose={() => setMessage("")}
+              onClose={() => setMessage('')}
               severity="success"
+              sx={{
+                backgroundColor: '#67EBCF',
+              }}
             >
               {message}
             </Alert>

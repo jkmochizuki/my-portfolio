@@ -62,13 +62,18 @@ export const contactStyles = {
     },
   },
   sendButton: {
-    borderRadius: 2,
+    transition: 'var(--transition)',
+    borderColor: 'primary.main',
+    borderRadius: 1.5,
     fontSize: { xs: 10, md: 15 },
     marginBottom: { xs: 5, md: 0 },
-    '&:hover': {
-      bgcolor: 'secondary.main',
-      borderColor: 'secondary.main',
-      color: 'white',
+    '&:hover, &:focus-visible': {
+      outline: 'none',
+      boxShadow: '3px 3px 0 0 #67EBCF',
+      transform: 'translate(-4px, -4px)',
+    },
+    '&:after': {
+      display: 'none !important',
     },
   },
   infoContainer: {
@@ -114,12 +119,17 @@ export const homeStyles = {
     marginTop: { xs: -2, md: 0 },
   },
   button: {
+    transition: 'var(--transition)',
     borderColor: 'primary.main',
-    '&:hover': {
-      color: 'secondary.main',
-      borderColor: 'secondary.main',
+    '&:hover, &:focus-visible': {
+      outline: 'none',
+      boxShadow: '3px 3px 0 0 #67EBCF',
+      transform: 'translate(-4px, -4px)',
     },
-    borderRadius: 2,
+    '&:after': {
+      display: 'none !important',
+    },
+    borderRadius: 1.5,
     fontSize: {
       xs: 10,
       md: 15,
@@ -195,7 +205,7 @@ export const navbarStyles = {
   menuIcon: {
     fontSize: { xs: 25, md: 40 },
     transition: 'opacity 2s ease',
-    color: 'background.default'
+    color: 'background.default',
   },
   drawerPaperProps: {
     height: { xs: '100%', md: 500 },
@@ -276,7 +286,7 @@ export const projectsStyles = {
     },
   },
   cardHeader: {
-    bgcolor: '#1a1e2e',
+    bgcolor: 'background.light',
     fontWeight: 'bold !important',
     '& .MuiCardHeader-title': {
       [theme.breakpoints.down('sm')]: {

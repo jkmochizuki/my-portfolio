@@ -26,8 +26,10 @@ export const theme = createTheme({
       secondary: "#A0AEC0",
     },
     background: {
-      default: "#171a26",
-      light: "#1a1e2e"
+      // default: "#171a26",
+      // light: "#1a1e2e"
+      default: '#071426',
+      light: '#101f36',
     },
   },
 
@@ -48,7 +50,7 @@ export const theme = createTheme({
       },
     },
     h4: {
-      color: "#2af0ea",
+      color: "#67EBCF",
       fontWeight: "bold",
       fontSize: "2.2rem",
       "@media (max-width:900px)": {

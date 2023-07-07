@@ -71,7 +71,7 @@
   height: 0;
   position: absolute;
   bottom: 0;
-  background-color:  rgba(100, 255, 218, 0.95); 
+  background-color:  rgba(103, 235, 207, 0.95); 
   color: "text.primary";
   left: 0;
   right: 0;
@@ -123,10 +123,8 @@
   overflow: hidden;
 } */
 
-
 .swiper-button-prev, .swiper-button-next {
-  color: #2af0ea; 
-  
+  color: #67EBCF;
 }
 
 @media (max-width:900px) {
