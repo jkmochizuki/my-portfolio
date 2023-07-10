@@ -138,6 +138,10 @@ export const homeStyles = {
       xs: 100,
       md: 140,
     },
+    height: {
+      xs: 35,
+      md: 45
+    }
   },
 };
 
