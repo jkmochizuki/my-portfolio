@@ -90,7 +90,7 @@ export const contactStyles = {
     alignItems: 'center',
   },
   icon: {
-    fontSize: 'large',
+    fontSize: 'x-large',
     color: 'text.secondary',
   },
   logo: {
@@ -162,7 +162,7 @@ export const rightSideLinksStyles = {
     paddingRight: { xs: 4, md: 6 },
   },
   icon: {
-    fontSize: 'large',
+    fontSize: '20px',
     cursor: 'pointer',
     alignSelf: 'center',
     '&:hover': {
@@ -177,7 +177,7 @@ export const rightSideLinksStyles = {
   text: {
     writingMode: 'vertical-rl',
     alignSelf: 'center',
-    fontSize: { xs: '8px', md: '10px' },
+    fontSize: { xs: '8px', md: '12px' },
   },
 };
 
@@ -291,7 +291,7 @@ export const projectsStyles = {
     border: '0.1px solid',
     borderColor: 'primary.main',
     [theme.breakpoints.up('md')]: {
-      boxShadow: '15px 15px 0px 0px #1c1e26, 15px 15px 0px 0.5px #2af0ea',
+      boxShadow: '15px 15px 0px 0px #071426, 15px 15px 0px 0.5px #67EBCF',
     },
   },
   cardHeader: {
