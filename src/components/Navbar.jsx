@@ -90,16 +90,18 @@ export default function Navbar(props) {
             sx={navbarStyles.navSection}
             className={`container ${inView ? 'slide-in-nav' : ''}`}
           >
-            {!isOpen ? (
-              <Box
-                component="img"
-                src={process.env.PUBLIC_URL + '/images/logo.png'}
-                alt=""
-                sx={navbarStyles.navItems}
-              />
-            ) : (
-              <Box sx={navbarStyles.navItems} />
-            )}
+            <NavHashLink to="#home" smooth>
+              {!isOpen ? (
+                <Box
+                  component="img"
+                  src={process.env.PUBLIC_URL + '/images/logo.png'}
+                  alt=""
+                  sx={navbarStyles.navItems}
+                />
+              ) : (
+                <Box sx={navbarStyles.navItems} />
+              )}
+            </NavHashLink>
 
             <IconButton
               sx={navbarStyles.iconButton}

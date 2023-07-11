@@ -165,8 +165,11 @@ export const rightSideLinksStyles = {
     fontSize: '20px',
     cursor: 'pointer',
     alignSelf: 'center',
+    transition: 'color 0.3s ease, transform 0.3s ease',
+    transform: 'scale(1)',
     '&:hover': {
       color: 'secondary.main',
+      transform: 'translateY(-3px)',
     },
   },
   divider: {
@@ -248,11 +251,11 @@ export const navbarStyles = {
   textOptions: {
     marginBottom: { xs: 0, md: 1 },
     fontSize: { xs: '1.2rem', md: '1.5rem' },
-    fontWeight: { xs: 'bold', md: 0 },
+
     color: { xs: 'secondary.main', md: 'text.primary' },
     textAlign: 'flex-start',
     '&:hover': {
-      fontWeight: 'bold',
+
       color: { xs: 'primary.text', md: 'secondary.main' },
     },
   },

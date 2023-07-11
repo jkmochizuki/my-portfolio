@@ -21,7 +21,7 @@ export default function RightSideLinks() {
     >
       <Stack
         direction="column"
-        spacing={1}
+        spacing={1.5}
         className={`container ${inView ? "slide-in-home" : ""}`}
       >
         <Typography sx={rightSideLinksStyles.text}>
