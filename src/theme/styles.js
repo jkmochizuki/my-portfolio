@@ -99,6 +99,11 @@ export const contactStyles = {
     marginBottom: 1,
     marginTop: -5,
   },
+  footer: {
+    display: 'flex',
+    justifyContent: 'center',
+    padding: 5
+  }
 };
 
 export const homeStyles = {
