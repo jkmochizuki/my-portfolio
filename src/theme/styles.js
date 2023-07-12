@@ -62,7 +62,7 @@ export const contactStyles = {
     },
   },
   sendButton: {
-    transition: 'var(--transition)',
+    transition: 'transform 0.3s, box-shadow 0.3s',
     borderColor: 'primary.main',
     borderRadius: 1.5,
     fontSize: { xs: 10, md: 15 },
@@ -124,7 +124,7 @@ export const homeStyles = {
     marginTop: { xs: -2, md: 0 },
   },
   button: {
-    transition: 'var(--transition)',
+    transition: 'transform 0.3s, box-shadow 0.3s',
     borderColor: 'primary.main',
     '&:hover, &:focus-visible': {
       outline: 'none',
