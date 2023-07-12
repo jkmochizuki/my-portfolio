@@ -28,7 +28,7 @@ export default function Projects() {
 
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: isSmallScreen ? 0.5 : 0.25,
+    threshold: isSmallScreen ? 1 : 0.4,
   });
 
   const ProjectSlides = () => {
@@ -113,8 +113,9 @@ export default function Projects() {
             <Grid item xs={12} sx={projectsStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={['', 1000, 'Projects', 2000]}
+                  sequence={['', 800, 'Projects', 2000]}
                   cursor={false}
+                  speed={10}
                 />
               </Typography>
             </Grid>

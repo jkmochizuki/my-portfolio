@@ -15,7 +15,7 @@ export default function About() {
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: isSmallScreen ? 1 : 0.25,
+    threshold: isSmallScreen ? 1 : 0.4,
   });
 
   return (
@@ -37,8 +37,9 @@ export default function About() {
             <Grid item xs={12} sx={aboutStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 1000, "About me", 2000]}
+                  sequence={["", 800, "About me", 2000]}
                   cursor={false}
+                  speed={10}
                 />
               </Typography>
             </Grid>

@@ -19,7 +19,7 @@ export default function Skills() {
 
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: isSmallScreen ? 0.5 : 0.25,
+    threshold: isSmallScreen ? 1 : 0.4,
   });
 
   return (
@@ -41,8 +41,9 @@ export default function Skills() {
             <Grid item xs={12} sx={skillsStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 1000, "Skills", 2000]}
+                  sequence={["", 800, "Skills", 2000]}
                   cursor={false}
+                  speed={10}
                 />
               </Typography>
             </Grid>

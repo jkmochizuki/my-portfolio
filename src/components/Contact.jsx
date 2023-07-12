@@ -43,7 +43,7 @@ export default function Contact() {
 
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: isSmallScreen ? 0.5 : 0.25,
+    threshold: isSmallScreen ? 0.8 : 0.25,
   });
 
   useEffect(() => {
@@ -120,8 +120,9 @@ export default function Contact() {
               <Grid item xs={12} sx={contactStyles.title}>
                 <Typography variant="h4">
                   <TypeAnimation
-                    sequence={['', 1000, 'Get in touch', 2000]}
+                    sequence={['', 800, 'Get in touch', 2000]}
                     cursor={false}
+                    speed={10}
                   />
                 </Typography>
               </Grid>
@@ -299,9 +300,9 @@ export default function Contact() {
           </ThemeProvider>
         ) : null}
       </Grid>
-        <Typography variant="body2" sx={contactStyles.footer}>
-          &copy; {new Date().getFullYear()} Juliana Mochizuki
-        </Typography>
+      <Typography variant="body2" sx={contactStyles.footer}>
+        &copy; {new Date().getFullYear()} Juliana Mochizuki
+      </Typography>
     </>
   );
 }
