@@ -120,7 +120,7 @@ export default function Contact() {
               <Grid item xs={12} sx={contactStyles.title}>
                 <Typography variant="h4">
                   <TypeAnimation
-                    sequence={['', 800, 'Get in touch', 2000]}
+                    sequence={['', 800, 'Get in touch', 1500]}
                     cursor={false}
                     speed={10}
                   />

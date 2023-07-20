@@ -41,7 +41,7 @@ export default function Skills() {
             <Grid item xs={12} sx={skillsStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 800, "Skills", 2000]}
+                  sequence={["", 800, "Skills", 1500]}
                   cursor={false}
                   speed={10}
                 />

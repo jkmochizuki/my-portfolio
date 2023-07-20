@@ -37,7 +37,7 @@ export default function About() {
             <Grid item xs={12} sx={aboutStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={["", 800, "About me", 2000]}
+                  sequence={["", 800, "About me", 1500]}
                   cursor={false}
                   speed={10}
                 />

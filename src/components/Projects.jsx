@@ -113,7 +113,7 @@ export default function Projects() {
             <Grid item xs={12} sx={projectsStyles.title}>
               <Typography variant="h4">
                 <TypeAnimation
-                  sequence={['', 800, 'Projects', 2000]}
+                  sequence={['', 800, 'Projects', 1500]}
                   cursor={false}
                   speed={10}
                 />
